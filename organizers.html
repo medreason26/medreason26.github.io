@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Organizers | MedReason</title>
+  <link rel="stylesheet" href="style.css" />
+  <script defer src="script.js"></script>
+</head>
+<body>
+  <nav class="site-nav">
+    <div class="container nav-shell">
+      <a class="nav-logo-left" href="index.html" aria-label="MedReason home">
+        <img src="assets/logos/medreason-nav.png" alt="MedReason @ MICCAI 2026" />
+      </a>
+
+      <button class="nav-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-sidebar">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <div class="nav-center">
+        <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="challenge.html">Challenge</a>
+        <a href="benchmark.html">Benchmark</a>
+        <a href="faq.html">FAQ</a>
+        <a class="active" href="organizers.html">Organizers</a>
+          <a class="join-btn" href="YOUR_GRAND_CHALLENGE_URL" target="_blank" rel="noopener noreferrer">Join!</a>
+        </div>
+      </div>
+
+      <a class="nav-logo-right" href="https://conferences.miccai.org/2026/en/" target="_blank" rel="noopener noreferrer" aria-label="MICCAI 2026 website">
+        <img src="assets/logos/miccai2026-logo.png" alt="MICCAI 2026 logo" />
+      </a>
+    </div>
+
+    <div class="nav-overlay"></div>
+
+    <aside class="mobile-sidebar" id="mobile-sidebar" aria-hidden="true">
+      <button class="nav-close" type="button" aria-label="Close menu">×</button>
+      <div class="mobile-nav-links">
+        <a href="index.html">Home</a>
+        <a href="challenge.html">Challenge</a>
+        <a href="benchmark.html">Benchmark</a>
+        <a href="faq.html">FAQ</a>
+        <a class="active" href="organizers.html">Organizers</a>
+        <a class="join-btn" href="YOUR_GRAND_CHALLENGE_URL" target="_blank" rel="noopener noreferrer">Join!</a>
+      </div>
+    </aside>
+  </nav>
+
+  <header class="page-hero">
+    <div class="container narrow">
+      <div class="eyebrow">Organizers</div>
+      <h1>Research and clinical organizing team</h1>
+      <p class="page-lead">The challenge is organized by researchers and clinical collaborators across academic and medical centers.</p>
+    </div>
+  </header>
+
+  <main>
+    <section class="section">
+      <div class="container card-grid two">
+        <article class="organizer-card">
+          <div class="section-label">Lead contact</div>
+          <h3>Hongwei Bran Li</h3>
+          <p>National University of Singapore</p>
+          <p><a href="mailto:hongwei.bran.li@nus.edu.sg">hongwei.bran.li@nus.edu.sg</a></p>
+        </article>
+        <article class="organizer-card">
+          <div class="section-label">Clinical collaboration</div>
+          <h3>Clinically grounded challenge design</h3>
+          <p>Clinicians are involved in task design and validation, particularly in constructing and verifying medically meaningful image-question-answer triplets.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section section-soft">
+      <div class="container">
+        <div class="section-label">Team</div>
+        <h2>Organizing committee</h2>
+        <div class="organizer-grid">
+          <div class="organizer-card"><h3>Hongwei Bran Li</h3><p>Department of Diagnostic Radiology, National University of Singapore</p></div>
+          <div class="organizer-card"><h3>Pek-Lan Khong</h3><p>Department of Diagnostic Radiology, National University of Singapore</p></div>
+          <div class="organizer-card"><h3>Xiaobin Hu</h3><p>School of Computing, National University of Singapore</p></div>
+          <div class="organizer-card"><h3>Ziyan Huang</h3><p>School of Future Technology, South China University of Technology</p></div>
+          <div class="organizer-card"><h3>Haozhen Gong</h3><p>School of Computing, National University of Singapore</p></div>
+          <div class="organizer-card"><h3>Yang Wang</h3><p>Zhujiang Hospital of Southern Medical University</p></div>
+          <div class="organizer-card"><h3>Zhiheng Zhang</h3><p>Affiliated Drum Tower Hospital, Medical School of Nanjing University</p></div>
+          <div class="organizer-card"><h3>Zhenyu Gong</h3><p>Department of Neurosurgery/Neuro-Oncology, Sun Yat-Sen University Cancer Center</p></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div>
+        <strong>Contact</strong><br />
+        <a href="mailto:hongwei.bran.li@nus.edu.sg">hongwei.bran.li@nus.edu.sg</a>
+      </div>
+      <div>
+        <strong>Join the challenge</strong><br />
+        <a href="YOUR_GRAND_CHALLENGE_URL" target="_blank" rel="noopener noreferrer">Go to the submission platform</a>
+      </div>
+    </div>
+  </footer>
+
+  <div class="image-lightbox" id="imageLightbox" aria-hidden="true">
+    <button class="image-lightbox-close" type="button" aria-label="Close image preview">×</button>
+    <img class="image-lightbox-img" id="imageLightboxImg" src="" alt="Expanded preview" />
+  </div>
+</body>
+</html>

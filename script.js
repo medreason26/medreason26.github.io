@@ -77,10 +77,14 @@ document.addEventListener('DOMContentLoaded', () => {
     document.body.style.overflow = '';
   }
 
+  const touchLikePointer = window.matchMedia('(pointer: coarse)').matches;
+
   zoomableImages.forEach((img) => {
-    img.addEventListener('dblclick', () => {
-      openImageLightbox(img.src, img.alt);
-    });
+    const openPreview = () => openImageLightbox(img.src, img.alt);
+    img.addEventListener('dblclick', openPreview);
+    if (touchLikePointer) {
+      img.addEventListener('click', openPreview);
+    }
   });
 
   if (imageLightboxClose) {

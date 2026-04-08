@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>MedReason Challenge 2026</title>
   <link rel="stylesheet" href="style.css" />
+  <script defer src="script.js"></script>
 </head>
 <body>
   <nav class="site-nav">
@@ -12,20 +13,42 @@
       <a class="nav-logo-left" href="index.html" aria-label="MedReason home">
         <img src="assets/logos/medreason-nav.png" alt="MedReason @ MICCAI 2026" />
       </a>
+
+      <button class="nav-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-sidebar">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
       <div class="nav-center">
         <div class="nav-links">
-          <a href="index.html">Home</a>
-          <a class="active" href="challenge.html">Challenge</a>
-          <a href="benchmark.html">Benchmark</a>
-          <a href="faq.html">FAQ</a>
-          <a href="organizers.html">Organizers</a>
+        <a href="index.html">Home</a>
+        <a class="active" href="challenge.html">Challenge</a>
+        <a href="benchmark.html">Benchmark</a>
+        <a href="faq.html">FAQ</a>
+        <a href="organizers.html">Organizers</a>
           <a class="join-btn" href="YOUR_GRAND_CHALLENGE_URL" target="_blank" rel="noopener noreferrer">Join!</a>
         </div>
       </div>
+
       <a class="nav-logo-right" href="https://conferences.miccai.org/2026/en/" target="_blank" rel="noopener noreferrer" aria-label="MICCAI 2026 website">
         <img src="assets/logos/miccai2026-logo.png" alt="MICCAI 2026 logo" />
       </a>
     </div>
+
+    <div class="nav-overlay"></div>
+
+    <aside class="mobile-sidebar" id="mobile-sidebar" aria-hidden="true">
+      <button class="nav-close" type="button" aria-label="Close menu">×</button>
+      <div class="mobile-nav-links">
+        <a href="index.html">Home</a>
+        <a class="active" href="challenge.html">Challenge</a>
+        <a href="benchmark.html">Benchmark</a>
+        <a href="faq.html">FAQ</a>
+        <a href="organizers.html">Organizers</a>
+        <a class="join-btn" href="YOUR_GRAND_CHALLENGE_URL" target="_blank" rel="noopener noreferrer">Join!</a>
+      </div>
+    </aside>
   </nav>
 
   <header class="page-hero">
@@ -38,7 +61,7 @@
           <a class="anchor-pill" href="#task-data">Task&amp;Data</a>
           <a class="anchor-pill" href="#baseline-code">Baseline Code</a>
           <a class="anchor-pill" href="#leaderboard-evaluation">Leaderboard &amp; Evaluation</a>
-          <a class="anchor-pill" href="#publication-participation">Publication Policy &amp; Participation Policy</a>
+          <a class="anchor-pill" href="#publication-participation">Publication &amp; Participation Policy</a>
         </div>
       </div>
     </div>
@@ -56,7 +79,7 @@
           </p>
         </div>
         <div class="figure-frame">
-          <img src="assets/figures/overview.png" alt="MedReason challenge overview figure" />
+          <img class="zoomable-image" src="assets/figures/overview.png" alt="MedReason challenge overview figure" />
           <div class="figure-caption">
             Figure 1. MedReason builds on the fine-grained <a class="medcmr-link" href="https://www.arxiv.org/abs/2512.00818" target="_blank" rel="noopener noreferrer">Med-CMR</a> benchmark and evaluates a single medical VQA task across two clinical reasoning scenarios, with additional out-of-distribution testing on low-dose X-ray and 7T brain MRI.
           </div>
@@ -105,7 +128,7 @@
         </div>
 
         <div class="figure-frame">
-          <img src="assets/figures/task-data.png" alt="Tasks and data figure" />
+          <img class="zoomable-image" src="assets/figures/task-data.png" alt="Tasks and data figure" />
         </div>
       </div>
     </section>
@@ -138,7 +161,7 @@
     <section class="section" id="publication-participation">
       <div class="container challenge-stack">
         <div class="panel">
-          <div class="section-label">Publication Policy &amp; Participation Policy</div>
+          <div class="section-label">Publication &amp; Participation Policy</div>
           <h2>Participation rules and publication notes</h2>
           <p>
             This section is reserved for the detailed participation policy, documentation requirements for external resources, organizer-affiliated team rules, and publication / challenge overview paper policy.
@@ -160,5 +183,10 @@
       </div>
     </div>
   </footer>
+
+  <div class="image-lightbox" id="imageLightbox" aria-hidden="true">
+    <button class="image-lightbox-close" type="button" aria-label="Close image preview">×</button>
+    <img class="image-lightbox-img" id="imageLightboxImg" src="" alt="Expanded preview" />
+  </div>
 </body>
 </html>

@@ -7,10 +7,6 @@
   <link rel="stylesheet" href="style.css" />
   <script defer src="script.js"></script>
 </head>
-<div class="image-lightbox" id="imageLightbox" aria-hidden="true">
-  <button class="image-lightbox-close" type="button" aria-label="Close image preview">×</button>
-  <img class="image-lightbox-img" id="imageLightboxImg" src="" alt="Expanded preview" />
-</div>
 <body>
   <nav class="site-nav">
     <div class="container nav-shell">
@@ -26,11 +22,11 @@
 
       <div class="nav-center">
         <div class="nav-links">
-          <a class="active" href="index.html">Home</a>
-          <a href="challenge.html">Challenge</a>
-          <a href="benchmark.html">Benchmark</a>
-          <a href="faq.html">FAQ</a>
-          <a href="organizers.html">Organizers</a>
+        <a class="active" href="index.html">Home</a>
+        <a href="challenge.html">Challenge</a>
+        <a href="benchmark.html">Benchmark</a>
+        <a href="faq.html">FAQ</a>
+        <a href="organizers.html">Organizers</a>
           <a class="join-btn" href="YOUR_GRAND_CHALLENGE_URL" target="_blank" rel="noopener noreferrer">Join!</a>
         </div>
       </div>
@@ -54,6 +50,7 @@
       </div>
     </aside>
   </nav>
+
   <header class="hero">
     <div class="container hero-grid">
       <div class="hero-copy">
@@ -62,9 +59,9 @@
           MedReason
           <span class="hero-accent">Medical VQA under Domain Shift</span>
         </h1>
-          <p class="text">
-            Does medical specialization still hold when evidence becomes weaker in one setting and unfamiliar in another?
-          </p>
+        <p class="hero-subtitle">
+          Does medical specialization still hold when evidence becomes weaker in one setting and unfamiliar in another?
+        </p>
 
         <div class="hero-actions">
           <a class="btn btn-primary" href="challenge.html">Challenge Details</a>
@@ -76,6 +73,7 @@
           <a class="anchor-pill" href="#about">About</a>
           <a class="anchor-pill" href="#task">Task</a>
           <a class="anchor-pill" href="#timeline">Timeline</a>
+          <a class="anchor-pill more-pill" href="challenge.html">More</a>
         </div>
       </div>
 
@@ -87,23 +85,23 @@
     </div>
   </header>
 
-  <section class="institution-strip institution-strip-full">
-    <div class="institution-bar">
-      <div class="logo-strip">
-        <div class="inst-wrap"><img src="assets/logos/institutions/nus.png" alt="NUS" class="inst-logo logo-nus" onerror="this.style.display='none'; this.nextElementSibling.style.display='block'" /><span class="anchor-pill" style="display:none">NUS</span></div>
-        <div class="inst-wrap"><img src="assets/logos/institutions/tum.png" alt="TUM" class="inst-logo logo-tum" onerror="this.style.display='none'; this.nextElementSibling.style.display='block'" /><span class="anchor-pill" style="display:none">TUM</span></div>
-        <div class="inst-wrap"><img src="assets/logos/institutions/ruijin.png" alt="Ruijin Hospital" class="inst-logo logo-ruijin" onerror="this.style.display='none'; this.nextElementSibling.style.display='block'" /><span class="anchor-pill" style="display:none">Ruijin Hospital</span></div>
-        <div class="inst-wrap"><img src="assets/logos/institutions/zhujiang.png" alt="Zhujiang Hospital" class="inst-logo logo-zhujiang" onerror="this.style.display='none'; this.nextElementSibling.style.display='block'" /><span class="anchor-pill" style="display:none">Zhujiang Hospital</span></div>
-        <div class="inst-wrap"><img src="assets/logos/institutions/drumtower.png" alt="Drum Tower Hospital" class="inst-logo logo-drumtower" onerror="this.style.display='none'; this.nextElementSibling.style.display='block'" /><span class="anchor-pill" style="display:none">Drum Tower Hospital</span></div>
-        <div class="inst-wrap"><img src="assets/logos/institutions/nanjingu.png" alt="Nanjing University" class="inst-logo logo-nanjingu" onerror="this.style.display='none'; this.nextElementSibling.style.display='block'" /><span class="anchor-pill" style="display:none">Nanjing University</span></div>
-        <div class="inst-wrap"><img src="assets/logos/institutions/zju.png" alt="Zhejiang University" class="inst-logo logo-zju" onerror="this.style.display='none'; this.nextElementSibling.style.display='block'" /><span class="anchor-pill" style="display:none">Zhejiang University</span></div>
-        <div class="inst-wrap"><img src="assets/logos/institutions/scut.png" alt="South China University of Technology" class="inst-logo logo-scut" onerror="this.style.display='none'; this.nextElementSibling.style.display='block'" /><span class="anchor-pill" style="display:none">South China University of Technology</span></div>
-        <div class="inst-wrap"><img src="assets/logos/institutions/sysucc.png" alt="SYSU Cancer Center" class="inst-logo logo-sysucc" onerror="this.style.display='none'; this.nextElementSibling.style.display='block'" /><span class="anchor-pill" style="display:none">SYSU Cancer Center</span></div>
-      </div>
-
-      <div class="strip-text">
-        <p><strong>MedReason is organized by researchers and clinical collaborators from NUS and partner medical centers.</strong></p>
-        <p>The challenge is built on <a class="medcmr-link" href="https://www.arxiv.org/abs/2512.00818" target="_blank" rel="noopener noreferrer">Med-CMR</a>, a multi-institution benchmark developed across NUS, Nanjing University, Tongji University, Ruijin Hospital, TUM, and Zhejiang University.</p>
+  <section class="institution-strip">
+    <div class="container">
+      <div class="strip-card">
+        <div class="logo-strip">
+          <div class="inst-wrap"><img src="assets/logos/institutions/nus.png" alt="NUS" class="inst-logo logo-nus" onerror="this.style.display='none'; this.nextElementSibling.style.display='block'" /><span class="anchor-pill" style="display:none">NUS</span></div>
+          <div class="inst-wrap"><img src="assets/logos/institutions/tum.png" alt="TUM" class="inst-logo logo-tum" onerror="this.style.display='none'; this.nextElementSibling.style.display='block'" /><span class="anchor-pill" style="display:none">TUM</span></div>
+          <div class="inst-wrap"><img src="assets/logos/institutions/ruijin.png" alt="Ruijin Hospital" class="inst-logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='block'" /><span class="anchor-pill" style="display:none">Ruijin Hospital</span></div>
+          <div class="inst-wrap"><img src="assets/logos/institutions/zhujiang.png" alt="Zhujiang Hospital" class="inst-logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='block'" /><span class="anchor-pill" style="display:none">Zhujiang Hospital</span></div>
+          <div class="inst-wrap"><img src="assets/logos/institutions/drumtower.png" alt="Drum Tower Hospital" class="inst-logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='block'" /><span class="anchor-pill" style="display:none">Drum Tower Hospital</span></div>
+          <div class="inst-wrap"><img src="assets/logos/institutions/nanjingu.png" alt="Nanjing University" class="inst-logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='block'" /><span class="anchor-pill" style="display:none">Nanjing University</span></div>
+          <div class="inst-wrap"><img src="assets/logos/institutions/zju.png" alt="Zhejiang University" class="inst-logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='block'" /><span class="anchor-pill" style="display:none">Zhejiang University</span></div>
+          <div class="inst-wrap"><img src="assets/logos/institutions/sysucc.png" alt="SYSU Cancer Center" class="inst-logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='block'" /><span class="anchor-pill" style="display:none">SYSU Cancer Center</span></div>
+        </div>
+        <div class="strip-text">
+          <p><strong>MedReason is organized by researchers and clinical collaborators from NUS and partner medical centers.</strong></p>
+          <p>The challenge is built on <a class="medcmr-link" href="https://www.arxiv.org/abs/2512.00818" target="_blank" rel="noopener noreferrer">Med-CMR</a>, a multi-institution benchmark developed across NUS, Nanjing University, Tongji University, Ruijin Hospital, TUM, and Zhejiang University.</p>
+        </div>
       </div>
     </div>
   </section>
@@ -133,39 +131,31 @@
         </div>
       </div>
     </section>
-
     <section class="section section-soft" id="about">
       <div class="container about-container">
         <div class="section-label">About</div>
-
         <div class="about-center-kicker">MedReason2026 Challenge</div>
-
         <p class="about-intro">
-          MedReason is a MICCAI challenge focused on designing medical MLLM reasoning systems that transcend basic classification and segmentation. Built upon the Med-CMR framework with the addition of Out-of-Distribution (OOD) data, it rigorously evaluates model robustness and fine-grained anatomical grounding. By providing a transparent evaluation of clinical reasoning, the challenge aims to guide the development of reliable and specialized medical AI.
+          MedReason is a MICCAI challenge focused on designing medical MLLM reasoning systems that transcend basic classification and segmentation. Built upon the <a class="medcmr-link" href="https://www.arxiv.org/abs/2512.00818" target="_blank" rel="noopener noreferrer">Med-CMR</a> framework with the addition of Out-of-Distribution (OOD) data, it rigorously evaluates model robustness and fine-grained anatomical grounding. By providing a transparent evaluation of clinical reasoning, the challenge aims to guide the development of reliable and specialized medical AI.
         </p>
-
         <h2>How Far Are We from Expert-Level Complex Medical Reasoning?</h2>
-
         <p class="about-subnote">
           From Med-CMR's observation: Larger medical and general models improve reliably on structured multiple-choice reasoning, but the gains in open-ended evaluation are much more limited for visual grounding and factual correctness.
         </p>
 
         <div class="about-layout">
           <div class="figure-frame">
-            <img class="zoomable-image" src="assets/figures/results1.png" alt="..." />
+            <img class="zoomable-image" src="assets/figures/results1.png" alt="Correlation between model size and performance metrics" />
           </div>
 
           <div class="figure-aside about-findings">
             <div class="section-label">Findings</div>
-
             <div class="highlight-line">
               <strong>Scaling helps on MCQ.</strong> Bigger models consistently benefit from stronger pattern recognition, multimodal integration, and clinical knowledge retrieval in structured diagnostic settings.
             </div>
-
             <div class="highlight-line">
               <strong>Open-ended gains are uneven.</strong> Larger models produce more coherent and internally consistent explanations, but their improvements in visual grounding and ground-truth correctness are much weaker.
             </div>
-
             <div class="highlight-line">
               <strong>Size alone is not enough.</strong> Expert-level complex medical reasoning still requires better extraction and use of visual evidence, not just larger parameter counts.
             </div>
@@ -174,11 +164,9 @@
 
         <div class="about-bench-block">
           <h2>MedReason Benchmark</h2>
-
           <p class="about-subnote">
-            To dive down into recent MLLMs reasoning ability in real-world clinical scenarios, we proposed MedReason Bench/Challenge to encourage novel medical MLLMs reasoning system to discuss and tackle the problem <span class="text-emphasis">"Does medical specialization still hold when evidence becomes weaker in one setting and unfamiliar in another?</span>"
+            To dive down into recent MLLMs reasoning ability in real-world clinical scenarios, we proposed MedReason Bench/Challenge to encourage novel medical MLLMs reasoning system to discuss and tackle the problem <span class="text-emphasis">“Does medical specialization still hold when evidence becomes weaker in one setting and unfamiliar in another?”</span>
           </p>
-
           <div class="figure-frame about-bench-figure">
             <img class="zoomable-image" src="assets/figures/About_bench.png" alt="MedReason Benchmark diagram" />
           </div>
@@ -200,10 +188,8 @@
           <a class="quick-link" href="challenge.html#task-data">
             <div class="section-label">Dataset</div>
             <h3>Public benchmark + private OOD test</h3>
-            <p>
-              The challenge combines a broad Med-CMR backbone with additional <span class="no-break">low-dose X-ray</span> and
-              <span class="no-break">7T brain MRI</span> evaluation.
-            </p>
+            <p>The challenge combines a broad Med-CMR backbone with additional low-dose X-ray and 7T brain MRI evaluation.</p>
+          </a>
 
           <a class="quick-link" href="challenge.html#leaderboard-evaluation">
             <div class="section-label">Evaluation</div>
@@ -233,7 +219,7 @@
         <h2>Challenge schedule</h2>
         <div class="timeline-grid">
           <div class="timeline-card" data-start="2026-04-01" data-end="2026-04-14">
-            <div class="timeline-date">Apr 10</div>
+            <div class="timeline-date">Apr 1</div>
             <h3>Launch</h3>
             <p>Website goes live and registration opens.</p>
           </div>
@@ -279,5 +265,10 @@
       </div>
     </div>
   </footer>
+
+  <div class="image-lightbox" id="imageLightbox" aria-hidden="true">
+    <button class="image-lightbox-close" type="button" aria-label="Close image preview">×</button>
+    <img class="image-lightbox-img" id="imageLightboxImg" src="" alt="Expanded preview" />
+  </div>
 </body>
 </html>
