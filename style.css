@@ -716,6 +716,10 @@ p, li {
   }
   .nav-logo-right { justify-self: center; }
   .nav-center { width: 100%; }
+  /* 隐藏机器人图案所在的容器 */
+  .hero-visual {
+    display: none !important;
+  }
 }
 
 @media (max-width: 720px) {
@@ -1514,4 +1518,51 @@ body.nav-open .mobile-sidebar {
   .nav-toggle span {
     width: 20px;
   }
+}
+
+/* =========================================
+   修复 Logo 墙缩放丑陋问题 (Flexbox 流式布局)
+   ========================================= */
+
+/* 覆盖原本的 Grid 布局，改为 Flexbox */
+.logo-strip {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  justify-content: center !important; /* 整体居中对齐 */
+  align-items: center !important;
+  gap: 24px 36px !important; /* 行间距 24px，列间距 36px */
+  padding-bottom: 16px;
+}
+
+/* 移除强制的尺寸限制，让容器适应内容 */
+.inst-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 auto !important; 
+}
+
+/* 设定一个统一的视觉基准高度 */
+.inst-logo {
+  width: auto !important;
+  height: auto !important;
+  max-width: 100% !important;
+  max-height: 48px !important; /* 电脑端默认最大高度 */
+  object-fit: contain;
+}
+
+/* 针对部分原本就比较大/高的 Logo 微调 */
+.logo-nus { max-height: 56px !important; }
+.logo-tum { max-height: 52px !important; }
+
+/* 手机端进一步缩小间距和高度，使其更精致 */
+@media (max-width: 640px) {
+  .logo-strip {
+    gap: 18px 24px !important; 
+  }
+  .inst-logo {
+    max-height: 38px !important; /* 手机端整体缩小一点 */
+  }
+  .logo-nus { max-height: 46px !important; }
+  .logo-tum { max-height: 42px !important; }
 }
