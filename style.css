@@ -1566,3 +1566,51 @@ body.nav-open .mobile-sidebar {
   .logo-nus { max-height: 46px !important; }
   .logo-tum { max-height: 42px !important; }
 }
+
+/* =========================================
+   美化页面内导航栏 (Local Anchor Nav 滑动标签栏)
+   ========================================= */
+
+/* 1. 外层容器美化：去掉生硬的边框，加上柔和的阴影使其浮于页面之上 */
+.guide-row {
+  padding: 16px !important;
+  background: white !important;
+  border: none !important;
+  border-radius: 16px !important;
+  box-shadow: 0 4px 24px rgba(45, 106, 79, 0.08) !important;
+}
+
+/* 2. 布局改造：取消 Grid 双列，改为横向平滑滚动 */
+.section-anchor-nav {
+  display: flex !important;
+  flex-wrap: nowrap !important; /* 强制不换行 */
+  gap: 12px !important;
+  overflow-x: auto; /* 内容超出时允许横向滑动 */
+  -webkit-overflow-scrolling: touch; /* 让 iOS 上的滑动如丝般顺滑 */
+  padding-bottom: 4px; /* 给滑动区域留一点余量，防文字被截断 */
+  scrollbar-width: none; /* 隐藏 Firefox 的滚动条 */
+}
+
+/* 隐藏 Chrome/Safari 的默认滚动条，保持界面洁净 */
+.section-anchor-nav::-webkit-scrollbar {
+  display: none;
+}
+
+/* 3. 胶囊按钮美化：保持单行，优化颜色和交互动画 */
+.section-anchor-nav .anchor-pill {
+  flex: 0 0 auto; /* 保证胶囊自身宽度不被挤压 */
+  width: auto !important; /* 覆盖之前可能存在的 100% 宽度 */
+  white-space: nowrap; /* 核心：强制文字在一行显示，绝不换行 */
+  padding: 10px 18px !important;
+  font-size: 14px;
+  background: var(--surface-soft); /* 使用非常淡的灰绿色作为底色 */
+  border: 1px solid transparent !important; /* 去掉原本生硬的边框 */
+  transition: all 0.25s ease;
+}
+
+/* 悬停时的精致反馈 */
+.section-anchor-nav .anchor-pill:hover {
+  background: var(--green-100);
+  color: var(--green-900);
+  transform: translateY(-2px); /* 悬浮时微微上浮 */
+}
