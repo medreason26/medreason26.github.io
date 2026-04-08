@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MedReason Challenge 2026</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <nav class="site-nav">
+    <div class="container nav-shell">
+      <a class="nav-logo-left" href="index.html" aria-label="MedReason home">
+        <img src="assets/logos/medreason-nav.png" alt="MedReason @ MICCAI 2026" />
+      </a>
+      <div class="nav-center">
+        <div class="nav-links">
+          <a href="index.html">Home</a>
+          <a class="active" href="challenge.html">Challenge</a>
+          <a href="benchmark.html">Benchmark</a>
+          <a href="faq.html">FAQ</a>
+          <a href="organizers.html">Organizers</a>
+          <a class="join-btn" href="YOUR_GRAND_CHALLENGE_URL" target="_blank" rel="noopener noreferrer">Join!</a>
+        </div>
+      </div>
+      <a class="nav-logo-right" href="https://conferences.miccai.org/2026/en/" target="_blank" rel="noopener noreferrer" aria-label="MICCAI 2026 website">
+        <img src="assets/logos/miccai2026-logo.png" alt="MICCAI 2026 logo" />
+      </a>
+    </div>
+  </nav>
+
+  <header class="page-hero">
+    <div class="container narrow">
+      <div class="eyebrow">Challenge</div>
+      <h1>MedReason Challenge 2026</h1>
+      <div class="guide-row">
+        <div class="section-anchor-nav">
+          <a class="anchor-pill" href="#overview">Overview</a>
+          <a class="anchor-pill" href="#task-data">Task&amp;Data</a>
+          <a class="anchor-pill" href="#baseline-code">Baseline Code</a>
+          <a class="anchor-pill" href="#leaderboard-evaluation">Leaderboard &amp; Evaluation</a>
+          <a class="anchor-pill" href="#publication-participation">Publication Policy &amp; Participation Policy</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="section" id="overview">
+      <div class="container challenge-stack">
+        <a class="faq-entry" href="faq.html">Go to FAQ →</a>
+        <div class="panel">
+          <div class="section-label">Overview</div>
+          <h2>What MedReason evaluates</h2>
+          <p>
+            MedReason evaluates whether medical MLLM systems can perform clinically grounded visual question answering beyond recognition alone. Built on the <a class="medcmr-link" href="https://www.arxiv.org/abs/2512.00818" target="_blank" rel="noopener noreferrer">Med-CMR</a> benchmark backbone, the challenge focuses on a single VQA task spanning anatomical and pathology-oriented reasoning. It further stress-tests robustness under domain shift through low-dose X-ray and 7T brain MRI.
+          </p>
+        </div>
+        <div class="figure-frame">
+          <img src="assets/figures/overview.png" alt="MedReason challenge overview figure" />
+          <div class="figure-caption">
+            Figure 1. MedReason builds on the fine-grained <a class="medcmr-link" href="https://www.arxiv.org/abs/2512.00818" target="_blank" rel="noopener noreferrer">Med-CMR</a> benchmark and evaluates a single medical VQA task across two clinical reasoning scenarios, with additional out-of-distribution testing on low-dose X-ray and 7T brain MRI.
+          </div>
+        </div>
+
+        <div class="tldr-box">
+          <div class="section-label">Challenge Logistics TL;DR</div>
+          <h2>Clear rules at a glance</h2>
+          <div class="tldr-list">
+            <div class="tldr-item">
+              <div><span class="tldr-index">1</span><span class="tldr-title">One challenge task: medical VQA</span></div>
+              <p>Participants solve a single medical visual question answering task with both <span class="highlight-inline">multiple-choice</span> and <span class="highlight-inline">open-ended</span> formats, spanning two clinical scenarios: image-grounded anatomical reasoning and pathology-oriented clinical reasoning.</p>
+            </div>
+            <div class="tldr-item">
+              <div><span class="tldr-index">2</span><span class="tldr-title">Submit one Dockerized system</span></div>
+              <p>Submissions are made as Docker containers on a self-hosted platform built in a grand-challenge.org style. Teams may submit multiple runs during <span class="highlight-inline">pre-evaluation</span>, but only one final run is counted for the official ranking.</p>
+            </div>
+            <div class="tldr-item">
+              <div><span class="tldr-index">3</span><span class="tldr-title">Public resources are allowed; private data are not</span></div>
+              <p>Participants may use challenge data, publicly available datasets, and open-source pre-trained models. Private, proprietary, or non-publicly available datasets are not permitted, and all external resources must be documented.</p>
+            </div>
+            <div class="tldr-item">
+              <div><span class="tldr-index">4</span><span class="tldr-title">Public ranking, awards, and MICCAI workshop visibility</span></div>
+              <p>Top-3 methods will be announced publicly. Awarded teams receive certificates, planned prizes, workshop recognition, and may be invited to present and contribute to the challenge overview paper.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-soft" id="task-data">
+      <div class="container challenge-stack">
+        <div class="panel">
+          <div class="section-label">Task &amp; Data</div>
+          <h2>One VQA task across two clinical scenarios</h2>
+          <p>
+            MedReason defines a single medical visual question answering task. Each case contains one medical image, optional high-level context, and one or more VQA queries. Participant systems must return either a multiple-choice answer or an open-ended answer depending on the question format.
+          </p>
+          <p>
+            The task spans two application scenarios. The first focuses on <strong>image-grounded anatomical reasoning</strong>, including anatomical identification, spatial relationships, and structural organization. The second focuses on <strong>pathology-oriented clinical reasoning</strong>, including abnormality inference, subtle finding differentiation, and reasoning under ambiguity.
+          </p>
+          <p>
+            The public benchmark backbone is provided through <a class="medcmr-link" href="https://www.arxiv.org/abs/2512.00818" target="_blank" rel="noopener noreferrer">Med-CMR</a>, and the dataset is available on <a class="medcmr-link" href="https://huggingface.co/datasets/aaassddaadf/Med-CMR" target="_blank" rel="noopener noreferrer">Hugging Face</a>.
+          </p>
+          <a class="external-link" href="https://huggingface.co/datasets/aaassddaadf/Med-CMR" target="_blank" rel="noopener noreferrer">Open the Med-CMR dataset on Hugging Face →</a>
+        </div>
+
+        <div class="figure-frame">
+          <img src="assets/figures/task-data.png" alt="Tasks and data figure" />
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="baseline-code">
+      <div class="container challenge-stack">
+        <div class="panel">
+          <div class="section-label">Baseline Code</div>
+          <h2>Code and starter resources</h2>
+          <p>
+            This section is reserved for the official baseline code, starter scripts, and submission templates. A public repository link will be added here together with environment instructions and packaging details for Docker-based submission.
+          </p>
+          <a class="external-link" href="YOUR_GITHUB_REPO_LINK" target="_blank" rel="noopener noreferrer">Open the GitHub repository →</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-soft" id="leaderboard-evaluation">
+      <div class="container challenge-stack">
+        <div class="panel">
+          <div class="section-label">Leaderboard &amp; Evaluation</div>
+          <h2>Evaluation pipeline and official ranking</h2>
+          <p>
+            This section is reserved for the final description of the public leaderboard, private OOD test procedure, evaluation server workflow, and official ranking protocol. The final page can also include links to the submission platform and detailed scoring notes.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="publication-participation">
+      <div class="container challenge-stack">
+        <div class="panel">
+          <div class="section-label">Publication Policy &amp; Participation Policy</div>
+          <h2>Participation rules and publication notes</h2>
+          <p>
+            This section is reserved for the detailed participation policy, documentation requirements for external resources, organizer-affiliated team rules, and publication / challenge overview paper policy.
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div>
+        <strong>Contact</strong><br />
+        hongwei.bran.li@nus.edu.sg
+      </div>
+      <div>
+        <strong>Join the challenge</strong><br />
+        <a href="YOUR_GRAND_CHALLENGE_URL" target="_blank" rel="noopener noreferrer">Go to the submission platform</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

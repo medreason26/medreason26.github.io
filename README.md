@@ -1,1 +1,1 @@
-# medreason26.github.io
+Homepage for MedReason2026.

@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Med-CMR Benchmark</title>
+  <link rel="stylesheet" href="style.css" />
+  <script defer src="script.js"></script>
+</head>
+<div class="image-lightbox" id="imageLightbox" aria-hidden="true">
+  <button class="image-lightbox-close" type="button" aria-label="Close image preview">×</button>
+  <img class="image-lightbox-img" id="imageLightboxImg" src="" alt="Expanded preview" />
+</div>
+<body>
+  <nav class="site-nav">
+    <div class="container nav-shell">
+      <a class="nav-logo-left" href="index.html" aria-label="MedReason home">
+        <img src="assets/logos/medreason-nav.png" alt="MedReason @ MICCAI 2026" />
+      </a>
+      <div class="nav-center">
+        <div class="nav-links">
+          <a href="index.html">Home</a>
+          <a href="challenge.html">Challenge</a>
+          <a class="active" href="benchmark.html">Benchmark</a>
+          <a href="faq.html">FAQ</a>
+          <a href="organizers.html">Organizers</a>
+          <a class="join-btn" href="YOUR_GRAND_CHALLENGE_URL" target="_blank" rel="noopener noreferrer">Join!</a>
+        </div>
+      </div>
+      <a class="nav-logo-right" href="https://conferences.miccai.org/2026/en/" target="_blank" rel="noopener noreferrer" aria-label="MICCAI 2026 website">
+        <img src="assets/logos/miccai2026-logo.png" alt="MICCAI 2026 logo" />
+      </a>
+    </div>
+  </nav>
+
+  <header class="page-hero">
+    <div class="container narrow benchmark-header">
+      <div class="eyebrow">Benchmark</div>
+      <h1>Med-CMR: the benchmark backbone behind MedReason</h1>
+      <p class="page-lead">
+        <a class="medcmr-link" href="https://www.arxiv.org/abs/2512.00818" target="_blank" rel="noopener noreferrer">Med-CMR</a> provides the fine-grained reasoning structure that underpins the MedReason challenge.
+      </p>
+    </div>
+  </header>
+
+  <main>
+    <section class="section">
+      <div class="container benchmark-module">
+        <div class="benchmark-copy">
+          <div class="section-label">About</div>
+          <h2>What is Med-CMR?</h2>
+          <p>
+            <a class="medcmr-link" href="https://www.arxiv.org/abs/2512.00818" target="_blank" rel="noopener noreferrer">Med-CMR</a> is a fine-grained benchmark for medical complex multimodal reasoning. It was designed to move beyond perception-level medical VQA and to diagnose what current medical MLLMs can and cannot do when visual evidence, clinical logic, and task structure interact.
+          </p>
+          <a class="external-link" href="https://www.arxiv.org/abs/2512.00818" target="_blank" rel="noopener noreferrer">Read the Med-CMR paper →</a>
+        </div>
+        <div class="benchmark-figure">
+          <img class="zoomable-image" src="assets/logos/med-cmr.png" alt="Med-CMR logo" />
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-soft">
+      <div class="container">
+
+        <h2>The 7 reasoning dimensions</h2>
+        <div class="text-grid">
+          <div class="dimension-list">
+            <h3>Perception-oriented dimensions</h3>
+            <ul>
+              <li>Small-Object Detection</li>
+              <li>Fine-Detail Discrimination</li>
+              <li>Spatial Understanding</li>
+            </ul>
+          </div>
+          <div class="dimension-list">
+            <h3>Reasoning-oriented dimensions</h3>
+            <ul>
+              <li>Temporal Prediction</li>
+              <li>Causal Reasoning</li>
+              <li>Long-Tail Generalization</li>
+              <li>Multi-Source Integration</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container benchmark-module benchmark-vertical">
+        <div class="benchmark-copy">
+          <div class="section-label">Benchmark statistics</div>
+          <h2>Coverage across abilities, modalities, and systems</h2>
+          <p>
+            The left side of the benchmark statistics figure organizes the benchmark around seven inference types and their relationship to medical ability. The right side shows that the benchmark spans diverse imaging modalities and body systems, making it broad enough to support both diagnostic reasoning and stress testing across heterogeneous medical contexts.
+          </p>
+          <p>
+            This diversity is exactly why <a class="medcmr-link" href="https://www.arxiv.org/abs/2512.00818" target="_blank" rel="noopener noreferrer">Med-CMR</a> works as the backbone of MedReason: it offers wide public coverage before the challenge adds targeted domain shifts on top.
+          </p>
+        </div>
+
+        <div class="benchmark-figure">
+          <img class="zoomable-image" src="assets/figures/bench-statistics.png" alt="Med-CMR benchmark statistics figure" />
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-soft">
+      <div class="container benchmark-module benchmark-vertical">
+        <div class="benchmark-copy">
+          <div class="section-label">Findings</div>
+          <h2>What the Med-CMR findings suggest</h2>
+          <div class="finding-list">
+            <div class="finding-item">
+              <h3>Recognition, reasoning, and medical knowledge dominate the error profile</h3>
+              <p>Across dimensions, the main sources of failure are image recognition errors, reasoning errors, and insufficient specialized medical knowledge. Question understanding and output format issues are comparatively rare.</p>
+            </div>
+            <div class="finding-item">
+              <h3>Different dimensions expose different limitations</h3>
+              <p>Visually demanding dimensions are still dominated by recognition-related failures, while many reasoning errors come from the inability to connect evidence across views, time, and clinical context.</p>
+            </div>
+            <div class="finding-item">
+              <h3>Fine-tuning does not help in a uniform way</h3>
+              <p>Compared with their base models, medically fine-tuned models often decline on MCQ tasks, while the gap narrows on open-ended questions and sometimes reverses in favor of medical models. The detailed analysis in the <a class="medcmr-link" href="https://www.arxiv.org/abs/2512.00818" target="_blank" rel="noopener noreferrer">Med-CMR</a> paper explains the major error patterns and likely causes for both task formats.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="benchmark-figure">
+          <img class="zoomable-image" src="assets/figures/bench-findings.png" alt="Med-CMR findings figure" />
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container narrow">
+        <div class="section-label">Citation</div>
+        <h2>Med-CMR paper</h2>
+        <p class="long-text"><a class="medcmr-link" href="https://www.arxiv.org/abs/2512.00818" target="_blank" rel="noopener noreferrer">Med-CMR: A Fine-Grained Benchmark Integrating Visual Evidence and Clinical Logic for Medical Complex Multimodal Reasoning</a></p>
+<pre class="bibtex-block">@article{gong2025medcmr,
+  title={Med-CMR: A Fine-Grained Benchmark Integrating Visual Evidence and Clinical Logic for Medical Complex Multimodal Reasoning},
+  author={Gong, Haozhen and Ji, Xiaozhong and Liu, Yuansen and Wu, Wenbin and Yan, Xiaoxiao and Liu, Jingjing and Wu, Kai and Pan, Jiazhen and Jian, Bailiang and Zhang, Jiangning and Hu, Xiaobin and Li, Hongwei Bran},
+  journal={arXiv preprint arXiv:2512.00818},
+  year={2025},
+  doi={10.48550/arXiv.2512.00818}
+}</pre>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div>
+        <strong>Back to challenge</strong><br />
+        <a href="challenge.html">Go to Challenge</a>
+      </div>
+      <div>
+        <strong>Dataset</strong><br />
+        <a class="medcmr-link" href="https://huggingface.co/datasets/aaassddaadf/Med-CMR" target="_blank" rel="noopener noreferrer">Open on Hugging Face</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
