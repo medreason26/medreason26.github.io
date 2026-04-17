@@ -54,6 +54,47 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
+  /* homepage in-page sidebar active link */
+  const sidebarLinks = Array.from(document.querySelectorAll('.home-sidebar-link'));
+
+  if (sidebarLinks.length > 0) {
+    const sectionTargets = sidebarLinks
+      .map((link) => {
+        const sectionId = link.getAttribute('href');
+        if (!sectionId || !sectionId.startsWith('#')) return null;
+        const section = document.querySelector(sectionId);
+        if (!section) return null;
+        return { link, section };
+      })
+      .filter(Boolean);
+
+    function updateSidebarActiveLink() {
+      if (sectionTargets.length === 0) return;
+
+      const activationLine = window.scrollY + 140;
+      let activeItem = sectionTargets[0];
+
+      sectionTargets.forEach((item) => {
+        if (item.section.offsetTop <= activationLine) {
+          activeItem = item;
+        }
+      });
+
+      /* If scrolled to the very bottom, activate the last section */
+      const atBottom = (window.innerHeight + window.scrollY) >= (document.body.scrollHeight - 2);
+      if (atBottom) {
+        activeItem = sectionTargets[sectionTargets.length - 1];
+      }
+
+      sidebarLinks.forEach((link) => link.classList.remove('active'));
+      activeItem.link.classList.add('active');
+    }
+
+    updateSidebarActiveLink();
+    window.addEventListener('scroll', updateSidebarActiveLink, { passive: true });
+    window.addEventListener('resize', updateSidebarActiveLink);
+  }
+
   /* image double-click fullscreen preview */
   const zoomableImages = document.querySelectorAll('.zoomable-image');
   const imageLightbox = document.getElementById('imageLightbox');
