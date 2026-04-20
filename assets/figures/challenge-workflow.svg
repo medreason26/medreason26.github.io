@@ -1,0 +1,132 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1800" height="760" viewBox="0 0 1800 760" role="img" aria-labelledby="title desc">
+  <title id="title">MedReason combined workflow</title>
+  <desc id="desc">Horizontal workflow showing local development on released train and validation data, pre-evaluation on the hidden public leaderboard split, and final evaluation on the hidden private leaderboard split.</desc>
+  <defs>
+    <style>
+      .bg { fill: #f8faf8; }
+      .title { font: 700 28px 'IBM Plex Sans', Arial, sans-serif; fill: #1f4f3b; }
+      .subtitle { font: 500 16px 'IBM Plex Sans', Arial, sans-serif; fill: #5f6d67; }
+      .lane { fill: #ffffff; stroke: #d7ddd7; stroke-width: 1.5; rx: 24; }
+      .lane-title { font: 700 18px 'IBM Plex Sans', Arial, sans-serif; fill: #1f4f3b; }
+      .lane-note { font: 500 13px 'IBM Plex Sans', Arial, sans-serif; fill: #5f6d67; }
+      .box { fill: #ffffff; stroke: #cad5cc; stroke-width: 1.5; rx: 18; }
+      .box-green { fill: #edf7ef; stroke: #7dad93; }
+      .box-orange { fill: #fff4e6; stroke: #e6b56a; }
+      .box-blue { fill: #eef5fb; stroke: #8aa8c4; }
+      .box-dark { fill: #24322c; stroke: #24322c; }
+      .box-title { font: 700 15px 'IBM Plex Sans', Arial, sans-serif; fill: #1f2624; }
+      .box-text { font: 500 13px 'IBM Plex Sans', Arial, sans-serif; fill: #4f5e58; }
+      .box-title-dark, .box-text-dark { fill: #ffffff; }
+      .arrow { stroke: #5f6d67; stroke-width: 2.5; fill: none; marker-end: url(#arrowhead); }
+      .dashed { stroke-dasharray: 7 7; }
+      .small { font: 700 12px 'IBM Plex Sans', Arial, sans-serif; fill: #5f6d67; text-transform: uppercase; letter-spacing: .06em; }
+      .legend-text { font: 500 13px 'IBM Plex Sans', Arial, sans-serif; fill: #4f5e58; }
+    </style>
+    <marker id="arrowhead" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#5f6d67"/>
+    </marker>
+  </defs>
+
+  <rect class="bg" x="0" y="0" width="1800" height="760" rx="28" />
+  <text class="title" x="70" y="62">MedReason workflow from released data to final ranking</text>
+  <text class="subtitle" x="70" y="92">Local development uses released participant-facing data. Pre-evaluation uses the hidden public leaderboard split. Final ranking uses the hidden private leaderboard split.</text>
+
+  <rect class="lane" x="60" y="130" width="1680" height="170" />
+  <text class="lane-title" x="88" y="165">Phase 1 · Local development on released data</text>
+  <text class="lane-note" x="88" y="188">Visible to participants. Use these resources to train, validate locally, and check submission format before Docker packaging.</text>
+
+  <rect class="lane" x="60" y="330" width="1680" height="170" />
+  <text class="lane-title" x="88" y="365">Phase 2 · Pre-evaluation and public leaderboard</text>
+  <text class="lane-note" x="88" y="388">Organizer-side execution on the hidden public leaderboard split. Teams may iterate after technical or metric feedback.</text>
+
+  <rect class="lane" x="60" y="530" width="1680" height="150" />
+  <text class="lane-title" x="88" y="565">Phase 3 · Final evaluation and official ranking</text>
+  <text class="lane-note" x="88" y="588">Final frozen package plus algorithm description. Organizers run the hidden private leaderboard split to determine the official ranking.</text>
+
+  <!-- Phase 1 boxes -->
+  <rect class="box box-green" x="90" y="210" width="260" height="64" rx="18"/>
+  <text class="box-title" x="220" y="236" text-anchor="middle">Access released train package</text>
+  <text class="box-text" x="220" y="256" text-anchor="middle">model development data</text>
+
+  <rect class="box box-green" x="390" y="210" width="290" height="64" rx="18"/>
+  <text class="box-title" x="535" y="236" text-anchor="middle">Access participant-facing validation package</text>
+  <text class="box-text" x="535" y="256" text-anchor="middle">local validation and I/O checking</text>
+
+  <rect class="box box-blue" x="720" y="210" width="270" height="64" rx="18"/>
+  <text class="box-title" x="855" y="236" text-anchor="middle">Develop and validate locally</text>
+  <text class="box-text" x="855" y="256" text-anchor="middle">train, debug, verify output format</text>
+
+  <rect class="box box-blue" x="1030" y="210" width="250" height="64" rx="18"/>
+  <text class="box-title" x="1155" y="236" text-anchor="middle">Package method as Docker</text>
+  <text class="box-text" x="1155" y="256" text-anchor="middle">follow official template</text>
+
+  <rect class="box box-orange" x="1320" y="210" width="350" height="64" rx="18"/>
+  <text class="box-title" x="1495" y="236" text-anchor="middle">Ready for organizer-side execution</text>
+  <text class="box-text" x="1495" y="256" text-anchor="middle">submission package should run end-to-end</text>
+
+  <path class="arrow" d="M350 242 H390"/>
+  <path class="arrow" d="M680 242 H720"/>
+  <path class="arrow" d="M990 242 H1030"/>
+  <path class="arrow" d="M1280 242 H1320"/>
+
+  <!-- Phase 2 boxes -->
+  <rect class="box box-orange" x="110" y="410" width="270" height="64" rx="18"/>
+  <text class="box-title" x="245" y="436" text-anchor="middle">Submit Docker for pre-evaluation</text>
+  <text class="box-text" x="245" y="456" text-anchor="middle">public leaderboard phase</text>
+
+  <rect class="box box-dark" x="430" y="410" width="320" height="64" rx="18"/>
+  <text class="box-title box-title-dark" x="590" y="436" text-anchor="middle">Organizers run hidden public split</text>
+  <text class="box-text box-text-dark" x="590" y="456" text-anchor="middle">not released to participants</text>
+
+  <rect class="box box-orange" x="800" y="410" width="260" height="64" rx="18"/>
+  <text class="box-title" x="930" y="436" text-anchor="middle">Public leaderboard / feedback</text>
+  <text class="box-text" x="930" y="456" text-anchor="middle">scores, sanity checks, execution status</text>
+
+  <rect class="box box-blue" x="1110" y="410" width="290" height="64" rx="18"/>
+  <text class="box-title" x="1255" y="436" text-anchor="middle">Iterate locally if needed</text>
+  <text class="box-text" x="1255" y="456" text-anchor="middle">fix packaging or improve method</text>
+
+  <rect class="box box-orange" x="1450" y="410" width="230" height="64" rx="18"/>
+  <text class="box-title" x="1565" y="436" text-anchor="middle">Freeze final package</text>
+  <text class="box-text" x="1565" y="456" text-anchor="middle">ready for final evaluation</text>
+
+  <path class="arrow" d="M380 442 H430"/>
+  <path class="arrow" d="M750 442 H800"/>
+  <path class="arrow" d="M1060 442 H1110"/>
+  <path class="arrow" d="M1400 442 H1450"/>
+  <path class="arrow dashed" d="M1255 410 V360 H855 V274"/>
+  <text class="small" x="1130" y="348">optional iteration loop</text>
+
+  <!-- Phase 3 boxes -->
+  <rect class="box box-orange" x="180" y="610" width="350" height="48" rx="16"/>
+  <text class="box-title" x="355" y="639" text-anchor="middle">Submit final Docker + algorithm description</text>
+
+  <rect class="box box-dark" x="610" y="602" width="330" height="64" rx="18"/>
+  <text class="box-title box-title-dark" x="775" y="628" text-anchor="middle">Organizers run hidden private split</text>
+  <text class="box-text box-text-dark" x="775" y="648" text-anchor="middle">official final evaluation</text>
+
+  <rect class="box box-orange" x="1020" y="610" width="250" height="48" rx="16"/>
+  <text class="box-title" x="1145" y="639" text-anchor="middle">Compute official ranking</text>
+
+  <rect class="box box-green" x="1350" y="610" width="270" height="48" rx="16"/>
+  <text class="box-title" x="1485" y="639" text-anchor="middle">Release final results</text>
+
+  <path class="arrow" d="M530 634 H610"/>
+  <path class="arrow" d="M940 634 H1020"/>
+  <path class="arrow" d="M1270 634 H1350"/>
+
+  <!-- Vertical phase connectors -->
+  <path class="arrow" d="M1495 274 V330"/>
+  <path class="arrow" d="M1565 474 V530"/>
+
+  <!-- Legend -->
+  <text class="small" x="90" y="716">Legend</text>
+  <rect class="box box-green" x="150" y="694" width="26" height="26" rx="8"/>
+  <text class="legend-text" x="188" y="712">released participant-facing data</text>
+  <rect class="box box-blue" x="420" y="694" width="26" height="26" rx="8"/>
+  <text class="legend-text" x="458" y="712">local participant work</text>
+  <rect class="box box-orange" x="650" y="694" width="26" height="26" rx="8"/>
+  <text class="legend-text" x="688" y="712">submission / feedback milestone</text>
+  <rect class="box box-dark" x="990" y="694" width="26" height="26" rx="8"/>
+  <text class="legend-text" x="1028" y="712">hidden organizer-side evaluation</text>
+</svg>

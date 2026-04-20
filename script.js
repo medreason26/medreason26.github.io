@@ -54,11 +54,24 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  /* homepage in-page sidebar active link */
-  const sidebarLinks = Array.from(document.querySelectorAll('.home-sidebar-link'));
+  /* in-page anchor active link */
+  const inPageLinkGroups = [
+    {
+      selector: '.home-sidebar-link',
+      activeClass: 'active'
+    },
+    {
+      selector: '.section-anchor-nav .anchor-pill[href^="#"]',
+      activeClass: 'active-anchor'
+    }
+  ];
 
-  if (sidebarLinks.length > 0) {
-    const sectionTargets = sidebarLinks
+  inPageLinkGroups.forEach(({ selector, activeClass }) => {
+    const links = Array.from(document.querySelectorAll(selector));
+
+    if (links.length === 0) return;
+
+    const sectionTargets = links
       .map((link) => {
         const sectionId = link.getAttribute('href');
         if (!sectionId || !sectionId.startsWith('#')) return null;
@@ -68,10 +81,10 @@ document.addEventListener('DOMContentLoaded', () => {
       })
       .filter(Boolean);
 
-    function updateSidebarActiveLink() {
-      if (sectionTargets.length === 0) return;
+    if (sectionTargets.length === 0) return;
 
-      const activationLine = window.scrollY + 140;
+    function updateActiveLink() {
+      const activationLine = window.scrollY + 150;
       let activeItem = sectionTargets[0];
 
       sectionTargets.forEach((item) => {
@@ -80,20 +93,19 @@ document.addEventListener('DOMContentLoaded', () => {
         }
       });
 
-      /* If scrolled to the very bottom, activate the last section */
       const atBottom = (window.innerHeight + window.scrollY) >= (document.body.scrollHeight - 2);
       if (atBottom) {
         activeItem = sectionTargets[sectionTargets.length - 1];
       }
 
-      sidebarLinks.forEach((link) => link.classList.remove('active'));
-      activeItem.link.classList.add('active');
+      links.forEach((link) => link.classList.remove(activeClass));
+      activeItem.link.classList.add(activeClass);
     }
 
-    updateSidebarActiveLink();
-    window.addEventListener('scroll', updateSidebarActiveLink, { passive: true });
-    window.addEventListener('resize', updateSidebarActiveLink);
-  }
+    updateActiveLink();
+    window.addEventListener('scroll', updateActiveLink, { passive: true });
+    window.addEventListener('resize', updateActiveLink);
+  });
 
   /* image double-click fullscreen preview */
   const zoomableImages = document.querySelectorAll('.zoomable-image');
