@@ -118,12 +118,20 @@
             <h2>Why MedReason?</h2>
 
             <p class="overview-lead">
-              Medical MLLMs can perform well on in-distribution benchmarks, yet reliability often drops under challenging clinical acquisition settings. MedReason evaluates whether multimodal reasoning remains dependable when image quality and domain conditions shift.
+              MedReason evaluates whether medical MLLM systems can perform <strong>clinically grounded visual question answering</strong> when image quality and acquisition conditions shift.
             </p>
 
-            <p class="overview-lead">
-              The challenge uses training data and part of the standard evaluation split from Med-CMR, then extends testing with dedicated OOD scenarios including low-dose X-ray and 7T brain MRI.
-            </p>
+            <div class="panel" style="margin-top:16px;">
+              <p style="margin:0;">
+                The challenge builds on Med-CMR and focuses on one medical VQA task, while extending evaluation to more difficult out-of-distribution settings such as <strong>low-dose X-ray</strong> and <strong>7T brain MRI</strong>.
+              </p>
+            </div>
+
+            <div class="panel" style="margin-top:14px;">
+              <p style="margin:0;">
+                The central question is not only whether a model can answer correctly, but whether its reasoning remains <strong>reliable, visually grounded, and robust under domain shift</strong>.
+              </p>
+            </div>
           </div>
         </section>
 
@@ -131,19 +139,30 @@
           <div class="container">
             <div class="section-label">Task</div>
             <h2>At-a-glance challenge task</h2>
+
             <p class="task-summary">
-              Build one medical multimodal system for two QA formats: multiple-choice and open-ended answers grounded in medical imaging evidence.
+              Participants build one medical multimodal system for <strong>two question formats</strong>: multiple-choice and open-ended questions grounded in medical imaging evidence.
             </p>
 
-            <div class="card-grid two task-mini-grid">
-              <article class="card">
-                <h3>Inputs and outputs</h3>
-                <p>Image(s) + question (+ optional context), with answers produced for both MCQ and free-form clinical reasoning prompts.</p>
-              </article>
-              <article class="card">
-                <h3>Evaluation scope</h3>
-                <p>Performance is measured on standard settings and OOD settings with dedicated robustness analysis.</p>
-              </article>
+            <div class="panel" style="margin-top:16px;">
+              <h3 style="margin-top:0;">What the system receives</h3>
+              <p style="margin-bottom:0;">
+                One medical image, one question, and optional context depending on the case.
+              </p>
+            </div>
+
+            <div class="panel" style="margin-top:14px;">
+              <h3 style="margin-top:0;">What the system must return</h3>
+              <p style="margin-bottom:0;">
+                For multiple-choice questions, the system returns one option. For open-ended questions, the system returns both a <code>reasoning_trace</code> and a final <code>answer</code>.
+              </p>
+            </div>
+
+            <div class="panel" style="margin-top:14px;">
+              <h3 style="margin-top:0;">How performance is evaluated</h3>
+              <p style="margin-bottom:0;">
+                Official ranking is based on <strong>MCQ Accuracy</strong>, <strong>Open-ended GT</strong>, and <strong>Open-ended VA</strong>, with organizer-side evaluation on hidden leaderboard splits.
+              </p>
             </div>
 
             <div class="section-actions">
@@ -156,43 +175,63 @@
           <div class="container">
             <div class="section-label">Schedule</div>
             <h2>Challenge timeline</h2>
-            <div class="timeline-grid">
-              <div class="timeline-card" data-start="2026-04-01" data-end="2026-04-14">
-                <div class="timeline-date">Apr 20</div>
-                <h3>Launch</h3>
-                <p>Website and registration open.</p>
+
+            <p class="task-summary">
+              The challenge follows a simple progression: <strong>registration and data release</strong> → <strong>pre-evaluation</strong> → <strong>final submission and workshop</strong>.
+            </p>
+
+            <div class="challenge-step-list challenge-step-list-strong" style="margin-top:16px;">
+              <div class="challenge-step-item" data-start="2026-04-01" data-end="2026-04-22">
+                <span class="challenge-step-index">1</span>
+                <div>
+                  <h3>Launch and registration</h3>
+                  <p>Website and registration open on <strong>Apr 22, 2026</strong>.</p>
+                </div>
               </div>
-              <div class="timeline-card" data-start="2026-04-15" data-end="2026-05-14">
-                <div class="timeline-date">Apr 22</div>
-                <h3>Train release</h3>
-                <p>Public materials and train split are released.</p>
+
+              <div class="challenge-step-item" data-start="2026-04-22" data-end="2026-05-14">
+                <span class="challenge-step-index">2</span>
+                <div>
+                  <h3>Train release</h3>
+                  <p>Public materials and train split are released on <strong>Apr 22, 2026</strong>.</p>
+                </div>
               </div>
-              <div class="timeline-card" data-start="2026-05-15" data-end="2026-05-31">
-                <div class="timeline-date">May 15</div>
-                <h3>Validation release</h3>
-                <p>Validation split and dev instructions open.</p>
+
+              <div class="challenge-step-item" data-start="2026-05-15" data-end="2026-05-31">
+                <span class="challenge-step-index">3</span>
+                <div>
+                  <h3>Validation release</h3>
+                  <p>Participant-facing validation resources open on <strong>May 15, 2026</strong>.</p>
+                </div>
               </div>
-              <div class="timeline-card" data-start="2026-06-01" data-end="2026-07-08">
-                <div class="timeline-date">Jun 1</div>
-                <h3>Pre-evaluation</h3>
-                <p>Validation server opens for iterative testing.</p>
+
+              <div class="challenge-step-item" data-start="2026-06-01" data-end="2026-07-14">
+                <span class="challenge-step-index">4</span>
+                <div>
+                  <h3>Pre-evaluation</h3>
+                  <p>The pre-evaluation phase begins on <strong>Jun 1, 2026</strong>.</p>
+                </div>
               </div>
-              <div class="timeline-card" data-start="2026-07-09" data-end="2026-08-10">
-                <div class="timeline-date">Jul 15</div>
-                <h3>Final submission</h3>
-                <p>Final Docker submission is frozen.</p>
+
+              <div class="challenge-step-item" data-start="2026-07-15" data-end="2026-08-10">
+                <span class="challenge-step-index">5</span>
+                <div>
+                  <h3>Final submission</h3>
+                  <p>The final Docker submission deadline is <strong>Jul 15, 2026</strong>.</p>
+                </div>
               </div>
-              <div class="timeline-card" data-start="2026-10-04" data-end="2026-10-10">
-                <div class="timeline-date">Oct 4</div>
-                <h3>Workshop</h3>
-                <p>Workshop and final leaderboard release.</p>
+
+              <div class="challenge-step-item" data-start="2026-10-04" data-end="2026-10-10">
+                <span class="challenge-step-index">6</span>
+                <div>
+                  <h3>Workshop and final results</h3>
+                  <p>The MICCAI workshop and final leaderboard release take place in <strong>October 2026</strong>.</p>
+                </div>
               </div>
             </div>
           </div>
         </section>
-
       </div>
-    </div>
   </main>
 
 

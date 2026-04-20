@@ -1,21 +1,24 @@
 document.addEventListener('DOMContentLoaded', () => {
-  /* timeline current-period badge */
-  const timelineCards = Array.from(document.querySelectorAll('.timeline-card[data-start][data-end]'));
+  /* current-period badge for homepage schedule */
+  const datedScheduleItems = Array.from(
+    document.querySelectorAll('.timeline-card[data-start][data-end], #schedule .challenge-step-item[data-start][data-end]')
+  );
+
   const current = new Date();
   const today = new Date(current.getFullYear(), current.getMonth(), current.getDate());
 
-  timelineCards.forEach((card) => {
-    const start = new Date(card.dataset.start + 'T00:00:00');
-    const end = new Date(card.dataset.end + 'T23:59:59');
+  datedScheduleItems.forEach((item) => {
+    const start = new Date(item.dataset.start + 'T00:00:00');
+    const end = new Date(item.dataset.end + 'T23:59:59');
 
     if (today >= start && today <= end) {
-      card.classList.add('current');
+      item.classList.add('current');
 
-      if (!card.querySelector('.timeline-present')) {
+      if (!item.querySelector('.timeline-present')) {
         const badge = document.createElement('div');
         badge.className = 'timeline-present';
         badge.textContent = 'Present Period';
-        card.appendChild(badge);
+        item.appendChild(badge);
       }
     }
   });
