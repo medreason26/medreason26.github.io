@@ -86,12 +86,12 @@
         </div>
 
         <div class="key-summary-box">
-          <div class="key-summary-title">What participants should understand first</div>
+          <div class="key-summary-title">Participation Guidelines</div>
           <ul class="key-summary-list">
             <li><strong>One challenge task:</strong> medical VQA with both multiple-choice and open-ended questions.</li>
-            <li><strong>Open-ended submissions require two outputs:</strong> <code>reasoning_trace</code> and <code>answer</code>.</li>
-            <li><strong>Released data are only for local development:</strong> official pre-evaluation and final ranking are organizer-side on hidden test splits.</li>
-            <li><strong>The official leaderboard uses three metrics:</strong> <span class="highlight-inline">MCQ Accuracy</span>, <span class="highlight-inline">Open-ended GT</span>, and <span class="highlight-inline">Open-ended VA</span>.</li>
+            <li><strong>Registration:</strong> <code>reasoning_trace</code> and <code>answer</code>.</li>
+            <li><strong>Data and Tools:</strong> official pre-evaluation and final ranking are organizer-side on hidden test splits.</li>
+            <li><strong>Submission:</strong> <span class="highlight-inline">MCQ Accuracy</span>, <span class="highlight-inline">Open-ended GT</span>, and <span class="highlight-inline">Open-ended VA</span>.</li>
           </ul>
         </div>
 
@@ -232,7 +232,7 @@
         </div>
 
         <div class="figure-frame workflow-figure-wide">
-          <img class="zoomable-image" src="assets/figures/challenge-workflow.svg" alt="Combined challenge workflow diagram showing released data usage, public pre-evaluation, and final private evaluation" />
+          <img class="zoomable-image" src="assets/figures/workflow.png" alt="Combined challenge workflow diagram showing released data usage, public pre-evaluation, and final private evaluation" />
           <div class="figure-caption">Figure 2. Released train and validation data are used locally. Pre-evaluation runs on the hidden public leaderboard split. Final official ranking runs on the hidden private leaderboard split.</div>
         </div>
 
@@ -272,12 +272,36 @@
           </p>
         </div>
 
-        <div class="key-summary-box key-summary-box-strong">
-          <div class="key-summary-title">Key points before reading the details</div>
+        <div class="key-summary-box">
+          <div class="key-summary-title">Participation Guidelines</div>
           <ul class="key-summary-list">
-            <li><strong>MCQ track:</strong> submit one option; official metric = <span class="highlight-inline">MCQ Accuracy</span>.</li>
-            <li><strong>Open-ended track:</strong> submit <code>reasoning_trace</code> and <code>answer</code>; official metrics = <span class="highlight-inline">Open-ended GT</span> and <span class="highlight-inline">Open-ended VA</span>.</li>
-            <li><strong>Open-ended scoring is organizer-side:</strong> a rubric-guided <span class="text-emphasis">LLM-as-a-judge</span> workflow assigns case-level scores and then averages them across the dataset.</li>
+            <li>
+              <strong>One challenge task:</strong>
+              medical VQA with both <span class="highlight-inline">multiple-choice</span> and <span class="highlight-inline">open-ended</span> questions.
+            </li>
+            <li>
+              <strong>Registration:</strong>
+              official Synapse participation page
+              <a class="medcmr-link" href="https://www.synapse.org/Synapse:syn74403682/wiki/640169" target="_blank" rel="noopener noreferrer">here</a>.
+              Optional organizer-side Google Form registration:
+              <a class="medcmr-link" href="https://forms.gle/BafVn42XKkDtLHzc7" target="_blank" rel="noopener noreferrer">here</a>.
+            </li>
+            <li>
+              <strong>Data and tools:</strong>
+              released participant-facing data are described on the
+              <a class="medcmr-link" href="https://www.synapse.org/Synapse:syn74403682/wiki/640171" target="_blank" rel="noopener noreferrer">Data Access page</a>.
+              Example code:
+              <a class="medcmr-link" href="YOUR_EXAMPLE_CODE_LINK" target="_blank" rel="noopener noreferrer">coming soon</a>.
+              Example Docker:
+              <a class="medcmr-link" href="https://www.synapse.org/Synapse:syn74403682/docker/" target="_blank" rel="noopener noreferrer">coming soon</a>.
+            </li>
+            <li>
+              <strong>Submission:</strong>
+              submit a <span class="highlight-inline">Docker package</span> and a
+              <span class="highlight-inline">model description document</span>.
+              See
+              <a class="medcmr-link" href="#submission-resources">Submission Resources</a>.
+            </li>
           </ul>
         </div>
 
