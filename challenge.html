@@ -97,7 +97,7 @@
               official Synapse participation page
               <a class="medcmr-link" href="https://www.synapse.org/Synapse:syn74403682/wiki/640168640169" target="_blank" rel="noopener noreferrer">here</a>.
               Optional organizer-side Google Form registration:
-              <a class="medcmr-link" href="https://forms.gle/" target="_blank" rel="noopener noreferrer">here</a>.
+              <a class="medcmr-link" href="https://forms.gle/TcZp23odriM9ReYu5" target="_blank" rel="noopener noreferrer">here</a>.
             </li>
             <li>
               <strong>Data and tools:</strong>
@@ -211,13 +211,13 @@
                 <td>Public leaderboard test</td>
                 <td>No</td>
                 <td>No</td>
-                <td>Organizer-side pre-evaluation and public leaderboard ranking</td>
+                <td>One organizer-side pre-evaluation run and one equal-contribution component of the final ranking</td>
               </tr>
               <tr>
                 <td>Private leaderboard test</td>
                 <td>No</td>
                 <td>No</td>
-                <td>Organizer-side final official ranking</td>
+                <td>One equal-contribution component of the final official ranking</td>
               </tr>
             </tbody>
           </table>
@@ -233,13 +233,19 @@
           <div class="secondary-detail-block">
             <div class="secondary-label">Hidden splits</div>
             <h3>What remains organizer-side</h3>
-            <p>The public leaderboard split is used during pre-evaluation. The private leaderboard split is used only for the final official ranking after submissions are frozen.</p>
+            <p>The hidden public evaluation split is used for one organizer-side pre-evaluation run per team and also contributes equally with the hidden private evaluation split to the final official ranking.</p>
           </div>
         </div>
 
         <div class="challenge-note">
           <strong>Important.</strong>
           Participants cannot directly evaluate on leaderboard test sets locally. Official leaderboard results are obtained only by organizer-side execution of submitted Docker packages on hidden evaluation data.
+        </div>
+
+        <div class="secondary-detail-block secondary-detail-block-soft">
+          <div class="secondary-label">Research-only access</div>
+          <h3>Only want to download the dataset?</h3>
+          <p>If you only want to access the released participant-facing dataset for research or local experiments and do not plan to join the official leaderboard, you can go directly to the <a class="medcmr-link" href="https://www.synapse.org/Synapse:syn74403682/wiki/640171" target="_blank" rel="noopener noreferrer">Data Access page</a> and the <a class="medcmr-link" href="https://www.synapse.org/Synapse:syn74403682/datasets/" target="_blank" rel="noopener noreferrer">Synapse Datasets page</a>. Official leaderboard participation is only required if you want organizer-side evaluation and ranking.</p>
         </div>
       </div>
     </section>
@@ -250,13 +256,13 @@
           <div class="section-super">How the challenge runs</div>
           <h2 class="section-main-title">Workflow</h2>
           <p class="section-main-lead">
-            The challenge process has three connected phases: <span class="highlight-inline">local development</span> on released data, <span class="highlight-inline">pre-evaluation</span> on the hidden public leaderboard split, and <span class="highlight-inline">final evaluation</span> on the hidden private leaderboard split.
+            The challenge process has three connected phases: <span class="highlight-inline">local development</span> on released data, <span class="highlight-inline">one organizer-side pre-evaluation</span> on the hidden public evaluation split several weeks before the deadline, and <span class="highlight-inline">final evaluation</span> that combines the hidden public and hidden private evaluation datasets with equal contribution.
           </p>
         </div>
 
         <div class="figure-frame workflow-figure-wide">
           <img class="zoomable-image" src="assets/figures/workflow.png" alt="Combined challenge workflow diagram showing released data usage, public pre-evaluation, and final private evaluation" />
-          <div class="figure-caption">Figure 2. Released train and validation data are used locally. Pre-evaluation runs on the hidden public leaderboard split. Final official ranking runs on the hidden private leaderboard split.</div>
+          <div class="figure-caption">Figure 2. Released train and validation data are used locally. Each team receives one organizer-side pre-evaluation result on the hidden public evaluation split several weeks before the deadline. Final official ranking combines the hidden public and hidden private evaluation datasets with equal contribution.</div>
         </div>
 
         <div class="challenge-step-list challenge-step-list-strong">
@@ -270,15 +276,15 @@
           <div class="challenge-step-item">
             <span class="challenge-step-index">2</span>
             <div>
-              <h3>Pre-evaluation (Many times) on the hidden public split</h3>
-              <p>Teams submit a Docker package for organizer-side execution. The hidden public leaderboard split supports technical verification and public challenge-period ranking.</p>
+              <h3>Pre-evaluation (Once) on the hidden public split</h3>
+              <p>Each team may receive <strong>one</strong> organizer-side pre-evaluation result several weeks before the final submission deadline. The exact timing will be announced separately, and the evaluation result from this one run will be returned to the team.</p>
             </div>
           </div>
           <div class="challenge-step-item">
             <span class="challenge-step-index">3</span>
             <div>
-              <h3>Final evaluation (Once) on the hidden private split</h3>
-              <p>After final submissions are frozen, organizers run the final official package on the hidden private leaderboard split to determine the official ranking.</p>
+              <h3>Final evaluation and equal-contribution ranking</h3>
+              <p>After final submissions are frozen, organizers compute the final official ranking by combining results from the hidden public and hidden private evaluation datasets with <strong>equal contribution</strong>.</p>
             </div>
           </div>
         </div>
@@ -471,9 +477,9 @@ else:
           <h3>What the official leaderboard shows</h3>
           <ul class="leaderboard-list-vertical">
             <li><strong>Main displayed metrics:</strong> MCQ Accuracy, Open-ended GT, and Open-ended VA.</li>
-            <li><strong>Overall ranking:</strong> computed from the average of the per-metric ranks for those three official metrics.</li>
-            <li><strong>Pre-evaluation:</strong> based on the hidden public leaderboard split.</li>
-            <li><strong>Final official ranking:</strong> determined after final submission freeze on the hidden private leaderboard split.</li>
+            <li><strong>Overall ranking:</strong> computed from the average of the per-metric ranks for the three official metrics, after combining the hidden public and hidden private evaluation datasets with <strong>equal contribution</strong>.</li>
+            <li><strong>Pre-evaluation:</strong> one organizer-side run per team on the hidden public evaluation split, several weeks before the final submission deadline; the returned result is for technical verification and method feedback.</li>
+            <li><strong>Final official ranking:</strong> determined from both the hidden public and hidden private evaluation datasets, weighted equally.</li>
           </ul>
         </div>
       </div>
