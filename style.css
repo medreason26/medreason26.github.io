@@ -515,9 +515,7 @@ p, li {
 .hero-institutions {
   width: 100%;
   border-top: 1px solid rgba(45, 106, 79, 0.08);
-  padding: 14px 18px;
-  background: #ffffff;
-  border-radius: 16px;
+  padding-top: 14px;
 }
 
 .hero-institutions .institution-carousel-window {
