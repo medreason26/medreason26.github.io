@@ -15,10 +15,15 @@ document.addEventListener('DOMContentLoaded', () => {
       item.classList.add('current');
 
       if (!item.querySelector('.timeline-present')) {
-        const badge = document.createElement('div');
+        const badge = document.createElement('span');
         badge.className = 'timeline-present';
         badge.textContent = 'Present Period';
-        item.appendChild(badge);
+        const title = item.querySelector('h3');
+        if (title) {
+          title.appendChild(badge);
+        } else {
+          item.appendChild(badge);
+        }
       }
     }
   });
