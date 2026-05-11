@@ -56,9 +56,10 @@
     <div class="container narrow">
       <div class="eyebrow">Guide</div>
       <h1>Participation Guide</h1>
-      <p class="page-lead">
-        A participant-oriented guide to the MedReason task, released data, pre-evaluation and final evaluation workflow, official metrics, and submission requirements.
-      </p>
+
+      <div class="challenge-note" style="margin-top: 18px; margin-bottom: 8px; border-left-color: var(--orange-600);">
+        <strong style="color: var(--orange-600);">Important:</strong> MedReason uses a containerized evaluation workflow. Please use the official <a href="https://github.com/medreason26/MedReason-Challenge-Docker" target="_blank" rel="noopener noreferrer" style="text-decoration: underline;">Docker template repository</a> for local development and submission.
+      </div>
 
       <div class="guide-row">
         <div class="section-anchor-nav">
@@ -76,12 +77,10 @@
   <main>
     <section class="section" id="overview">
       <div class="container challenge-stack">
-        <a class="faq-entry" href="faq.html">Go to FAQ →</a>
-
         <div class="section-mainhead">
           <h2 class="section-main-title">Overview</h2>
           <p class="section-main-lead">
-            MedReason evaluates whether medical MLLM systems can perform <span class="text-emphasis">clinically grounded visual question answering</span> under domain shift. The challenge uses one medical VQA task, but it distinguishes between <span class="highlight-inline">closed-ended accuracy</span> and <span class="highlight-inline">open-ended grounded reasoning</span>.
+            MedReason evaluates whether medical MLLM systems can perform <strong>clinically grounded visual question answering</strong> under domain shift. The challenge uses one medical VQA task, but it distinguishes between <strong>closed-ended accuracy</strong> and <strong>open-ended grounded reasoning</strong>.
           </p>
         </div>
 
@@ -90,11 +89,11 @@
           <ul class="key-summary-list">
             <li>
               <strong>One challenge task:</strong>
-              medical VQA with both <span class="highlight-inline">multiple-choice</span> and <span class="highlight-inline">open-ended</span> questions.
+              medical VQA with both <strong>multiple-choice</strong> and <strong>open-ended</strong> questions.
             </li>
             <li>
               <strong>Registration:</strong>
-              a <span class="highlight-inline">Synapse account</span> and official challenge registration are required before you can access and download the released dataset packages.
+              a <strong>Synapse account</strong> and official challenge registration are required before you can access and download the released dataset packages.
               Official Synapse participation page
               <a class="medcmr-link" href="https://www.synapse.org/Synapse:syn74403682/wiki/640169" target="_blank" rel="noopener noreferrer">here</a>.
               Optional organizer-side Google Form registration:
@@ -110,8 +109,8 @@
             </li>
             <li>
               <strong>Submission:</strong>
-              submit a <span class="highlight-inline">Docker package</span> and a
-              <span class="highlight-inline">model description document</span>.
+              submit a <strong>Docker package</strong> and a
+              <strong>model description document</strong>.
               See
               <a class="medcmr-link" href="#submission-resources">Submission Resources</a>.
             </li>
@@ -132,21 +131,18 @@
     <section class="section section-soft" id="task">
       <div class="container challenge-stack">
         <div class="section-mainhead">
-          <div class="section-super">What you need to solve</div>
           <h2 class="section-main-title">Task</h2>
           <p class="section-main-lead">
-            MedReason defines <span class="text-emphasis">one medical visual question answering task</span>. Each case contains a medical image, optional high-level context, and one or more questions. Depending on the question type, your system must return either <span class="highlight-inline">one option</span> or <span class="highlight-inline">a reasoning trace plus a final answer</span>.
+            MedReason defines <strong>one medical visual question answering task</strong>. Each case contains a medical image, optional high-level context, and one or more questions. Depending on the question type, your system must return either <strong>one option</strong> or <strong>a reasoning trace plus a final answer</strong>.
           </p>
         </div>
 
         <div class="primary-flow-block">
-          <div class="flow-kicker">Question format A</div>
           <h3>Closed-ended questions</h3>
           <p>Your system returns a single multiple-choice option. This track evaluates whether the model can select the correct answer under the official option set.</p>
         </div>
 
         <div class="primary-flow-block">
-          <div class="flow-kicker">Question format B</div>
           <h3>Open-ended questions</h3>
           <p>Your system must return both <code>reasoning_trace</code> and <code>answer</code>. This is required because a plausible final answer may still be unsupported by image evidence, while the reasoning trace reveals whether the model remained visually grounded.</p>
         </div>
@@ -170,12 +166,11 @@
     <section class="section" id="data">
       <div class="container challenge-stack">
         <div class="section-mainhead">
-          <div class="section-super">What you can access</div>
           <h2 class="section-main-title">Data</h2>
           <p class="section-main-lead">
             The public benchmark backbone is provided with public reference data available on
             <a class="medcmr-link" href="https://www.synapse.org/Synapse:syn74522250.draft/datasets/" target="_blank" rel="noopener noreferrer">Synapse</a>.
-            MedReason organizes released participant-facing resources for <span class="highlight-inline">training</span> and <span class="highlight-inline">local development</span>, while keeping leaderboard test sets hidden for organizer-side evaluation.
+            MedReason organizes released participant-facing resources for <strong>training</strong> and <strong>local development</strong>, while keeping leaderboard test sets hidden for organizer-side evaluation.
           </p>
           <a class="external-link" href="https://www.synapse.org/Synapse:syn74522250.draft/datasets/" target="_blank" rel="noopener noreferrer">Open the MedReason public benchmark resources on Synapse →</a>
         </div>
@@ -258,10 +253,9 @@
     <section class="section section-soft" id="workflow">
       <div class="container challenge-stack">
         <div class="section-mainhead">
-          <div class="section-super">How the challenge runs</div>
           <h2 class="section-main-title">Workflow</h2>
           <p class="section-main-lead">
-            The challenge process has three connected phases: <span class="highlight-inline">local development</span> on released data, <span class="highlight-inline">one organizer-side pre-evaluation</span> on the hidden public evaluation split several weeks before the deadline, and <span class="highlight-inline">final evaluation</span> that combines the hidden public and hidden private evaluation datasets with equal contribution.
+            The challenge process has three connected phases: <strong>local development</strong> on released data, <strong>one organizer-side pre-evaluation</strong> on the hidden public evaluation split several weeks before the deadline, and <strong>final evaluation</strong> that combines the hidden public and hidden private evaluation datasets with equal contribution.
           </p>
         </div>
 
@@ -299,24 +293,22 @@
     <section class="section" id="evaluation-assessment">
       <div class="container challenge-stack">
         <div class="section-mainhead">
-          <div class="section-super">How your submission is judged</div>
           <h2 class="section-main-title">Evaluation &amp; Assessment</h2>
           <p class="section-main-lead">
-            Read this section from top to bottom. First understand the <span class="highlight-inline">MCQ track</span>. Then read the <span class="highlight-inline">open-ended track</span>. Finally, read how the open-ended case-level rubric scores become the official leaderboard metrics.
+            Read this section from top to bottom. First understand the <strong>MCQ track</strong>. Then read the <strong>open-ended track</strong>. Finally, read how the open-ended case-level rubric scores become the official leaderboard metrics.
           </p>
         </div>
 
         <div class="key-summary-box key-summary-box-strong">
           <div class="key-summary-title">Key points before reading the details</div>
           <ul class="key-summary-list">
-            <li><strong>MCQ track:</strong> submit one option; official metric = <span class="highlight-inline">MCQ Accuracy</span>.</li>
-            <li><strong>Open-ended track:</strong> submit <code>reasoning_trace</code> and <code>answer</code>; official metrics = <span class="highlight-inline">Open-ended GT</span> and <span class="highlight-inline">Open-ended VA</span>.</li>
-            <li><strong>Open-ended scoring is organizer-side:</strong> a rubric-guided <span class="text-emphasis">LLM-as-a-judge</span> workflow assigns case-level scores and then averages them across the dataset.</li>
+            <li><strong>MCQ track:</strong> submit one option; official metric = <strong>MCQ Accuracy</strong>.</li>
+            <li><strong>Open-ended track:</strong> submit <code>reasoning_trace</code> and <code>answer</code>; official metrics = <strong>Open-ended GT</strong> and <strong>Open-ended VA</strong>.</li>
+            <li><strong>Open-ended scoring is organizer-side:</strong> a <strong>LLM-as-a-judge</strong> workflow assigns case-level scores and then averages them across the dataset.</li>
           </ul>
         </div>
 
         <div class="primary-flow-block evaluation-block">
-          <div class="flow-kicker">Track A</div>
           <h3>MCQ evaluation</h3>
           <div class="plain-subsection">
             <h4>What you submit</h4>
@@ -338,7 +330,6 @@
         </div>
 
         <div class="primary-flow-block evaluation-block">
-          <div class="flow-kicker">Track B</div>
           <h3>Open-ended evaluation</h3>
           <div class="plain-subsection">
             <h4>What you submit</h4>
@@ -366,7 +357,6 @@
         </div>
 
         <div class="primary-flow-block evaluation-block">
-          <div class="flow-kicker">Open-ended scoring logic</div>
           <h3>How one open-ended case is scored</h3>
           <div class="challenge-step-list challenge-step-list-strong">
             <div class="challenge-step-item">
@@ -394,14 +384,13 @@
               <span class="challenge-step-index">4</span>
               <div>
                 <h4>Dataset-level leaderboard values</h4>
-                <p><span class="highlight-inline">Open-ended GT</span> is the mean of <span class="field-pill">GT_final</span> across open-ended cases. <span class="highlight-inline">Open-ended VA</span> is the mean of <span class="field-pill">VA_final</span> across open-ended cases.</p>
+                <p><strong>Open-ended GT</strong> is the mean of <span class="field-pill">GT_final</span> across open-ended cases. <strong>Open-ended VA</strong> is the mean of <span class="field-pill">VA_final</span> across open-ended cases.</p>
               </div>
             </div>
           </div>
         </div>
 
         <div class="primary-flow-block evaluation-block">
-          <div class="flow-kicker">What the 0–4 scale means</div>
           <h3>Case-level rubric components</h3>
           <p class="section-mini-lead">These 0–4 scores are assigned organizer-side evaluation judgding models for each open-ended case <strong>rating 0,1,2,3,4</strong>. They are <strong>not</strong> participant-submitted values.</p>
 
@@ -447,16 +436,14 @@
           </div>
 
           <div class="formula-block">
-            <div class="section-super-lite">Threshold-gated VA aggregation</div>
             <p class="formula-caption">
-              <strong>Final Visual Accuracy</strong> <span class="field-pill">VA_final</span> is derived from <span class="field-pill">VA_answer</span> and <span class="field-pill">RVF_trace</span>. This prevents an unfaithful reasoning trace from receiving a high final visual score.
+              <strong>Final Visual Accuracy</strong> (<span class="field-pill">VA_final</span>) is derived from <span class="field-pill">VA_answer</span> and <span class="field-pill">RVF_trace</span>. This prevents an unfaithful reasoning trace from receiving a high final visual score.
             </p>
-<pre>if RVF_trace &lt;= 1:
-    VA_final = min(VA_answer, 1)
-elif RVF_trace == 2:
-    VA_final = min(VA_answer, 3)
-else:
-    VA_final = VA_answer</pre>
+            <ul>
+              <li>If the reasoning trace scores very low (<span class="field-pill">RVF_trace</span> ≤ 1), the final visual score is capped at 1 regardless of answer quality.</li>
+              <li>If the reasoning trace is marginal (<span class="field-pill">RVF_trace</span> = 2), the final visual score is capped at 3.</li>
+              <li>Otherwise, the final visual score equals the answer-level visual accuracy as-is.</li>
+            </ul>
           </div>
 
           <div class="secondary-detail-block secondary-detail-block-soft">
@@ -467,7 +454,6 @@ else:
         </div>
 
         <div class="primary-flow-block evaluation-block">
-          <div class="flow-kicker">Special case</div>
           <h3>How “I don’t know” is handled</h3>
           <p>Suppose the image is low quality and the model answers: <em>“I cannot confidently confirm a pleural effusion from this image alone.”</em></p>
           <ul>
@@ -478,7 +464,6 @@ else:
         </div>
 
         <div class="primary-flow-block evaluation-block">
-          <div class="flow-kicker">Official leaderboard</div>
           <h3>What the official leaderboard shows</h3>
           <ul class="leaderboard-list-vertical">
             <li><strong>Main displayed metrics:</strong> MCQ Accuracy, Open-ended GT, and Open-ended VA.</li>
@@ -493,10 +478,9 @@ else:
     <section class="section section-soft" id="submission-resources">
       <div class="container challenge-stack">
         <div class="section-mainhead">
-          <div class="section-super">What you must submit</div>
           <h2 class="section-main-title">Submission Resources</h2>
           <p class="section-main-lead">
-            To submit your model to the MedReason challenge, you need to provide <span class="highlight-inline">a Docker image package</span> and <span class="highlight-inline">a short model description</span>. The hidden leaderboard test sets will not be released, so your method must run through the official container-based evaluation workflow.
+            To submit your model to the MedReason challenge, you need to provide <strong>a Docker image package</strong> and <strong>a short model description</strong>. The hidden leaderboard test sets will not be released, so your method must run through the official container-based evaluation workflow.
           </p>
         </div>
 
