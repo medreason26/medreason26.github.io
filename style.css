@@ -1725,6 +1725,10 @@ p, li {
 .challenge-step-item h3 {
   margin: 0 0 6px;
   font-size: 19px;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
 }
 
 .challenge-step-item h4 {
@@ -2331,4 +2335,9 @@ p, li {
   font-size: 12px;
   font-weight: 800;
   text-transform: uppercase;
+}
+
+#schedule .challenge-step-item h3 .timeline-present {
+  margin-top: 0;
+  padding: 4px 10px;
 }
