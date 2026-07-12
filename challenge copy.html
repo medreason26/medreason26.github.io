@@ -61,15 +61,9 @@
         <strong style="color: var(--orange-600);">Important:</strong> MedReason uses a containerized evaluation workflow. Please use the official <a href="https://github.com/medreason26/MedReason-Challenge-Docker" target="_blank" rel="noopener noreferrer" style="text-decoration: underline;">Docker template repository</a> for local development and submission.
       </div>
 
-      <div class="challenge-note" style="margin-top: 12px; margin-bottom: 8px; border-left-color: var(--orange-600);">
-        <strong style="color: var(--orange-600);">Pre-evaluation leaderboard:</strong> The current leaderboard is available on Synapse and will be dynamically updated until <strong>July 15, 2026</strong>. New teams may still submit before July 15, with one pre-evaluation opportunity per team.
-        <a href="https://www.synapse.org/Synapse:syn74403682/wiki/642283" target="_blank" rel="noopener noreferrer" style="text-decoration: underline;">View the leaderboard →</a>
-      </div>
-
       <div class="guide-row">
         <div class="section-anchor-nav">
           <a class="anchor-pill active-anchor" href="#overview">Overview</a>
-          <a class="anchor-pill" href="https://www.synapse.org/Synapse:syn74403682/wiki/642283" target="_blank" rel="noopener noreferrer">Pre-evaluation Leaderboard</a>
           <a class="anchor-pill" href="#task">Task</a>
           <a class="anchor-pill" href="#data">Data</a>
           <a class="anchor-pill" href="#workflow">Workflow</a>
@@ -119,10 +113,6 @@
               <strong>model description document</strong>.
               See
               <a class="medcmr-link" href="#submission-resources">Submission Resources</a>.
-            </li>
-            <li>
-              <strong>Updated deadlines:</strong>
-              registration and pre-evaluation submission are due on <strong>July 15, 2026</strong>; final submission is currently due on <strong>July 22, 2026</strong>.
             </li>
           </ul>
         </div>
@@ -265,7 +255,7 @@
         <div class="section-mainhead">
           <h2 class="section-main-title">Workflow</h2>
           <p class="section-main-lead">
-            The challenge process has three connected phases: <strong>local development</strong> on released data, <strong>one organizer-side pre-evaluation</strong> on the hidden public evaluation split before July 15, 2026, and <strong>final evaluation</strong> that combines the pre-evaluation data and hidden private test data with equal contribution.
+            The challenge process has three connected phases: <strong>local development</strong> on released data, <strong>one organizer-side pre-evaluation</strong> on the hidden public evaluation split several weeks before the deadline, and <strong>final evaluation</strong> that combines the hidden public and hidden private evaluation datasets with equal contribution.
           </p>
         </div>
 
@@ -286,14 +276,14 @@
             <span class="challenge-step-index">2</span>
             <div>
               <h3>Pre-evaluation (Once) on the hidden public split</h3>
-              <p>Each team may receive <strong>one</strong> organizer-side pre-evaluation result. New teams may still submit for pre-evaluation before <strong>July 15, 2026</strong>, but each team has only one pre-evaluation opportunity. The result from this one run will be returned to the team and may also appear on the reference pre-evaluation leaderboard.</p>
+              <p>Each team may receive <strong>one</strong> organizer-side pre-evaluation result several weeks before the final submission deadline. The exact timing will be announced separately, and the evaluation result from this one run will be returned to the team.</p>
             </div>
           </div>
           <div class="challenge-step-item">
             <span class="challenge-step-index">3</span>
             <div>
               <h3>Final evaluation and equal-contribution ranking</h3>
-              <p>After final submissions are frozen, organizers compute the final official ranking by combining results from the pre-evaluation data and the hidden private test data with <strong>equal contribution</strong>.</p>
+              <p>After final submissions are frozen, organizers compute the final official ranking by combining results from the hidden public and hidden private evaluation datasets with <strong>equal contribution</strong>.</p>
             </div>
           </div>
         </div>
@@ -478,7 +468,7 @@
           <ul class="leaderboard-list-vertical">
             <li><strong>Main displayed metrics:</strong> MCQ Accuracy, Open-ended GT, and Open-ended VA.</li>
             <li><strong>Overall ranking:</strong> computed from the average of the per-metric ranks for the three official metrics, after combining the hidden public and hidden private evaluation datasets with <strong>equal contribution</strong>.</li>
-            <li><strong>Pre-evaluation:</strong> one organizer-side run per team on the hidden public/pre-evaluation split before July 15, 2026; the returned result is for technical verification and method feedback.</li>
+            <li><strong>Pre-evaluation:</strong> one organizer-side run per team on the hidden public evaluation split, several weeks before the final submission deadline; the returned result is for technical verification and method feedback.</li>
             <li><strong>Final official ranking:</strong> determined from both the hidden public and hidden private evaluation datasets, weighted equally.</li>
           </ul>
         </div>
@@ -520,7 +510,7 @@
             <span class="challenge-step-index">4</span>
             <div>
               <h3>Submit the model description</h3>
-              <p>In addition to the Docker submission, participants must submit a model description documents by <strong>July 22, 2026</strong>.</p>
+              <p>In addition to the Docker submission, participants must submit a model description documents by <strong>July 15th, 2026</strong>.</p>
               <p>Use the following form: <a class="medcmr-link" href="https://www.synapse.org/Synapse:syn74530274" target="_blank" rel="noopener noreferrer">MedReason Model Description Submission Form</a></p>
             </div>
           </div>
