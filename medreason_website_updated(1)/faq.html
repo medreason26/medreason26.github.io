@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FAQ | MedReason</title>
+  <link rel="stylesheet" href="style.css" />
+  <script defer src="script.js"></script>
+</head>
+<body>
+  <nav class="site-nav">
+    <div class="container nav-shell">
+      <a class="nav-logo-left" href="index.html" aria-label="MedReason home">
+        <img src="assets/logos/medreason-nav.png" alt="MedReason @ MICCAI 2026" />
+      </a>
+
+      <button class="nav-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-sidebar">
+        <span></span><span></span><span></span>
+      </button>
+
+      <div class="nav-center">
+        <div class="nav-links">
+          <a href="index.html">Home</a>
+          <a href="challenge.html">Participation Guide</a>
+          <a href="workshop-paper.html">Paper Track</a>
+          <a class="active" href="faq.html">FAQ</a>
+          <a href="organizers.html">Organizers</a>
+          <a class="join-btn" href="https://www.synapse.org/Synapse:syn74403682/wiki/640168" target="_blank" rel="noopener noreferrer">Join!</a>
+        </div>
+      </div>
+
+      <a class="nav-logo-right" href="https://conferences.miccai.org/2026/en/" target="_blank" rel="noopener noreferrer" aria-label="MICCAI 2026 website">
+        <img src="assets/logos/miccai2026-logo.png" alt="MICCAI 2026 logo" />
+      </a>
+    </div>
+
+    <div class="nav-overlay"></div>
+
+    <aside class="mobile-sidebar" id="mobile-sidebar" aria-hidden="true">
+      <button class="nav-close" type="button" aria-label="Close menu">×</button>
+      <div class="mobile-nav-links">
+        <a href="index.html">Home</a>
+        <a href="challenge.html">Participation Guide</a>
+        <a href="workshop-paper.html">Paper Track</a>
+        <a class="active" href="faq.html">FAQ</a>
+        <a href="organizers.html">Organizers</a>
+        <a class="join-btn" href="https://www.synapse.org/Synapse:syn74403682/wiki/640168" target="_blank" rel="noopener noreferrer">Join!</a>
+      </div>
+    </aside>
+  </nav>
+
+  <section class="global-paper-banner" aria-label="New archival paper track announcement">
+    <div class="container global-paper-banner-inner">
+      <div class="global-paper-banner-copy">
+        <span>NEW · MICCAI 2026 SPRINGER LNCS PAPER TRACK</span>
+        <strong>All registered MedReason teams may submit an individual method paper.</strong>
+      </div>
+      <div class="global-paper-banner-deadline">
+        <small>Submit by</small>
+        <b>Aug 17 · 11:59 PM SGT</b>
+      </div>
+      <a href="workshop-paper.html">View paper rules →</a>
+    </div>
+  </section>
+
+
+  <header class="page-hero">
+    <div class="container narrow">
+      <div class="eyebrow">FAQ</div>
+      <h1>Frequently asked questions</h1>
+
+      <div class="contact-strip">
+        <span class="contact-strip-label">Contact</span>
+        <span class="contact-strip-text">
+          Questions about MedReason? The organizing team can receive emails sent to
+        </span>
+        <a class="contact-strip-email" href="mailto:medreason26@googlegroups.com">
+          medreason26@googlegroups.com
+        </a>
+        <span class="contact-strip-text">
+          for a faster and more comprehensive response.
+        </span>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="section">
+      <div class="container narrow faq-list">
+        <details class="faq-item" open>
+          <summary>What is the core task of MedReason?</summary>
+          <div class="faq-content">MedReason is a medical visual question answering challenge. Participants answer both multiple-choice and open-ended questions from medical images and optional high-level context.</div>
+        </details>
+        <details class="faq-item">
+          <summary>What does “unseen data” mean in this challenge?</summary>
+          <div class="faq-content">It refers specifically to the out-of-distribution conditions introduced by the challenge: low-dose X-ray and ultra-high-field 7T brain MRI.</div>
+        </details>
+        <details class="faq-item">
+          <summary>Do I need to train a medical MLLM from scratch?</summary>
+          <div class="faq-content">No. You submit a Dockerized runnable system. Publicly available datasets and open-source pre-trained models are allowed.</div>
+        </details>
+        <details class="faq-item">
+          <summary>How is MedReason related to Med-CMR?</summary>
+          <div class="faq-content">MedReason builds on <a class="medcmr-link" href="https://www.arxiv.org/abs/2512.00818" target="_blank" rel="noopener noreferrer">Med-CMR</a> as its benchmark backbone and extends it into a challenge with explicit domain shift.</div>
+        </details>
+        <details class="faq-item">
+          <summary>How are open-ended answers evaluated?</summary>
+          <div class="faq-content">Open-ended answers are evaluated for both ground-truth correctness and visual grounding quality, not only for fluency or coherence.</div>
+        </details>
+        <details class="faq-item">
+          <summary>Who may submit to the archival paper track?</summary>
+          <div class="faq-content">All registered MedReason teams—not only the Top 3—may submit one paper based primarily on the method used in their final challenge submission. Each paper may have up to three authors, and the team determines its author list and author order in accordance with standard authorship requirements. See the <a class="medcmr-link" href="workshop-paper.html">full Paper Track guidelines</a>.</div>
+        </details>
+        <details class="faq-item">
+          <summary>Does a workshop paper affect participation in the joint journal paper?</summary>
+          <div class="faq-content">No. Teams may participate in both opportunities. The individual workshop paper focuses on the team’s own method and results, while the joint journal paper focuses on challenge design, aggregate evaluation, cross-team comparison, and broader findings.</div>
+        </details>
+        <details class="faq-item">
+          <summary>What should authors do before OpenReview opens?</summary>
+          <div class="faq-content">Create and complete all author profiles as early as possible, preferably using institutional email addresses. New profiles without an institutional email may require moderation that can take up to two weeks, while profiles created with an institutional email are activated automatically.</div>
+        </details>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div><strong>Paper track</strong><br /><a href="workshop-paper.html">Submission guidelines</a></div>
+      <div>
+        <strong>Need participation rules?</strong><br />
+        <a href="challenge.html">Go to Participation Guide</a>
+      </div>
+      <div>
+        <strong>Back to home</strong><br />
+        <a href="index.html">Go to Home</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
