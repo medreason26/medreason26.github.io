@@ -2755,7 +2755,8 @@ p, li {
   border: 1px solid rgba(45, 106, 79, .13);
 }
 .status-fact span, .status-fact small { color: var(--muted); font-size: 12px; }
-.status-fact strong { margin: 4px 0 2px; color: var(--green-900); font-size: 24px; line-height: 1.05; }
+.status-fact small { line-height: 1.35; }
+.status-fact strong { margin: 4px 0 2px; color: var(--green-900); font-size: clamp(18px, 2.1vw, 24px); line-height: 1.12; overflow-wrap: anywhere; word-break: break-word; }
 .leaderboard-entry-card {
   margin-top: 14px;
   padding: 20px 22px;
@@ -3517,5 +3518,356 @@ p, li {
   }
   .paper-review-timeline strong {
     font-size: 17px;
+  }
+}
+
+/* =========================================================
+   MedReason 2026 final workshop agenda page
+   ========================================================= */
+.workshop-home-panel { align-items: stretch; }
+.workshop-home-actions { margin-top: 16px; }
+.workshop-status-facts { grid-template-columns: repeat(3, minmax(160px, 1fr)); }
+.workshop-status-facts .status-fact { min-width: 0; }
+
+.agenda-page { padding-bottom: 12px; }
+.agenda-hero {
+  padding: 44px 0 34px;
+  background:
+    radial-gradient(900px 360px at 82% 0%, rgba(45, 106, 79, 0.10), transparent 68%),
+    linear-gradient(180deg, #f9fcfa 0%, #f4f8f5 100%);
+  border-bottom: 1px solid rgba(45, 106, 79, 0.08);
+}
+.agenda-hero-inner { max-width: 900px; }
+.agenda-hero h1 { color: var(--green-900); }
+.agenda-hero .page-lead { max-width: 720px; margin-bottom: 24px; }
+
+.agenda-meta-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+}
+.agenda-meta-item {
+  padding: 14px 16px;
+  background: rgba(255,255,255,0.82);
+  border: 1px solid rgba(45,106,79,0.12);
+  border-radius: 14px;
+}
+.agenda-meta-item span {
+  display: block;
+  color: var(--green-700);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  margin-bottom: 3px;
+}
+.agenda-meta-item strong { color: var(--green-900); font-size: 15px; }
+
+.agenda-section { padding-top: 42px; }
+.agenda-section-intro { margin: 0 0 20px; color: var(--muted); }
+.agenda-list { display: grid; gap: 10px; }
+.agenda-row {
+  display: grid;
+  grid-template-columns: 138px minmax(0,1fr);
+  gap: 18px;
+  align-items: stretch;
+  background: #fff;
+  border: 1px solid rgba(45,106,79,0.10);
+  border-radius: 16px;
+  overflow: hidden;
+}
+.agenda-time {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 18px 14px;
+  background: var(--surface-soft);
+  color: var(--green-900);
+  font-weight: 800;
+  font-variant-numeric: tabular-nums;
+  border-right: 1px solid rgba(45,106,79,0.08);
+  white-space: nowrap;
+}
+.agenda-event { padding: 15px 18px 16px 0; }
+.agenda-event h3 { margin: 0; font-size: 17px; line-height: 1.35; }
+.agenda-event p { margin: 5px 0 0; color: var(--muted); font-size: 14px; line-height: 1.5; }
+.agenda-tag {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 8px;
+  margin-bottom: 7px;
+  border-radius: 999px;
+  background: var(--green-100);
+  color: var(--green-900);
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+.agenda-tag-talk { background: #edf5f7; color: #1e6f7d; }
+.agenda-tag-award { background: var(--orange-100); color: #9f570d; }
+.agenda-row-keynote {
+  border-color: rgba(155,106,17,0.24);
+  background: linear-gradient(90deg, #fffdf7 0%, #ffffff 55%);
+}
+.agenda-row-keynote .agenda-time { background: #fbf4e2; color: #7d5612; }
+.agenda-row-keynote-soft .agenda-time { background: #fcf8ee; color: #7d5612; }
+.agenda-row-talk { border-color: rgba(39,132,143,0.16); }
+.agenda-row-talk .agenda-time { background: #f0f8f8; color: #176f77; }
+.agenda-row-awards { border-color: rgba(217,122,24,0.20); }
+.agenda-row-awards .agenda-time { background: #fff4e6; color: #a45f14; }
+
+.keynote-section { padding: 46px 0; }
+.keynote-card {
+  display: grid;
+  grid-template-columns: minmax(180px, 230px) minmax(0, 1fr);
+  gap: 28px;
+  margin-top: 18px;
+  padding: 22px;
+  background: #fff;
+  border: 1px solid rgba(45,106,79,0.10);
+  border-radius: 20px;
+}
+.keynote-photo-wrap {
+  min-height: 0;
+  height: fit-content;
+  align-self: start;
+  overflow: hidden;
+  border-radius: 16px;
+  background: #eef2ef;
+}
+.keynote-photo {
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  height: auto;
+  max-height: 440px;
+  object-fit: cover;
+  object-position: center 35%;
+  cursor: zoom-in;
+}
+.keynote-copy { align-self: center; }
+.keynote-kicker {
+  display: inline-flex;
+  margin-bottom: 10px;
+  padding: 6px 10px;
+  border-radius: 999px;
+  background: var(--gold-100);
+  color: var(--gold-700);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+.keynote-copy h3 { margin: 0 0 2px; font-size: 30px; color: var(--green-900); }
+.keynote-affiliation { margin: 0 0 14px; color: var(--green-700) !important; font-weight: 600; }
+.keynote-copy > p { color: var(--muted); }
+.keynote-talk-box {
+  margin: 18px 0 12px;
+  padding: 15px 16px;
+  border-left: 4px solid var(--green-700);
+  border-radius: 0 12px 12px 0;
+  background: var(--green-050);
+}
+.keynote-talk-box span {
+  display: block;
+  margin-bottom: 4px;
+  color: var(--green-700);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+.keynote-talk-box strong { display: block; color: var(--green-900); font-size: 18px; line-height: 1.4; }
+.keynote-talk-summary { margin-top: 0; }
+.keynote-profile-link { display: inline-flex; margin-top: 3px; color: var(--green-800); font-weight: 700; }
+
+.agenda-final-note { padding: 38px 0 48px; }
+.agenda-note-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 22px;
+  background: #fff;
+  border: 1px solid rgba(45,106,79,0.10);
+  border-radius: 18px;
+}
+.agenda-note-card h3 { margin: 3px 0 6px; font-size: 20px; }
+.agenda-note-card p { margin: 0; max-width: 650px; color: var(--muted); }
+.agenda-note-card .btn { flex: 0 0 auto; }
+
+@media (max-width: 900px) {
+  .workshop-status-facts { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+@media (max-width: 760px) {
+  .workshop-status-facts { grid-template-columns: 1fr; }
+  .agenda-meta-grid { grid-template-columns: 1fr; }
+  .agenda-row { grid-template-columns: 1fr; gap: 0; }
+  .agenda-time {
+    justify-content: flex-start;
+    padding: 10px 14px;
+    border-right: 0;
+    border-bottom: 1px solid rgba(45,106,79,0.08);
+  }
+  .agenda-event { padding: 14px; }
+  .keynote-card { grid-template-columns: 1fr; gap: 20px; }
+  .keynote-photo-wrap { max-width: 280px; }
+  .keynote-photo { max-height: none; }
+  .agenda-note-card { flex-direction: column; align-items: flex-start; }
+}
+
+
+/* Homepage keynote teaser */
+.home-keynote-teaser {
+  display: grid;
+  grid-template-columns: 118px minmax(0, 1fr);
+  gap: 18px;
+  align-items: center;
+  margin-top: 16px;
+  padding: 14px;
+  background: #fff;
+  border: 1px solid rgba(45,106,79,0.10);
+  border-radius: 16px;
+}
+.home-keynote-photo {
+  width: 118px;
+  height: 118px;
+  object-fit: cover;
+  object-position: center 34%;
+  border-radius: 13px;
+}
+.home-keynote-copy h3 { margin: 2px 0 4px; font-size: 21px; color: var(--green-900); }
+.home-keynote-copy p { margin: 0 0 6px; color: var(--muted); line-height: 1.5; }
+.home-keynote-copy em { font-style: italic; }
+@media (max-width: 560px) {
+  .home-keynote-teaser { grid-template-columns: 82px minmax(0,1fr); gap: 12px; }
+  .home-keynote-photo { width: 82px; height: 92px; }
+}
+
+/* =========================================================
+   Agenda refinements — Sep 26 final pass
+   1) onsite presenter reminder removed from agenda.html
+   2) keynote portrait reduced to a compact speaker-card size
+   3) workshop metadata cards made overflow-safe
+   ========================================================= */
+.agenda-meta-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+}
+.agenda-meta-item {
+  min-width: 0;
+  padding: 16px 18px;
+}
+.agenda-meta-item strong {
+  display: block;
+  min-width: 0;
+  font-size: clamp(16px, 1.7vw, 20px);
+  line-height: 1.25;
+  white-space: normal;
+  overflow-wrap: break-word;
+  word-break: normal;
+}
+
+.keynote-card {
+  grid-template-columns: 190px minmax(0, 1fr);
+  gap: 26px;
+  align-items: start;
+}
+.keynote-photo-wrap {
+  width: 190px;
+  max-width: 100%;
+  min-height: 0;
+  height: auto;
+  aspect-ratio: 4 / 5;
+  align-self: start;
+}
+.keynote-photo {
+  width: 100%;
+  height: 100%;
+  min-height: 0;
+  max-height: none;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  object-position: center 35%;
+}
+.keynote-copy {
+  min-width: 0;
+  align-self: start;
+}
+.keynote-affiliation,
+.keynote-copy > p,
+.keynote-talk-box strong {
+  overflow-wrap: break-word;
+}
+
+@media (max-width: 760px) {
+  .agenda-meta-grid { grid-template-columns: 1fr; }
+  .agenda-meta-item strong { font-size: 18px; }
+  .keynote-card { grid-template-columns: 1fr; gap: 18px; }
+  .keynote-photo-wrap {
+    width: min(180px, 60vw);
+    margin: 0 auto;
+    min-height: 0;
+  }
+  .keynote-photo {
+    min-height: 0;
+    height: 100%;
+  }
+}
+
+
+/* =========================================================
+   Final layout refinement — vertical workshop details
+   ========================================================= */
+.workshop-home-panel {
+  grid-template-columns: minmax(0, 1fr) 230px;
+  gap: 22px;
+  width: 100%;
+  max-width: 100%;
+  overflow: hidden;
+}
+.workshop-home-panel > * {
+  min-width: 0;
+}
+.workshop-status-facts {
+  display: grid;
+  grid-template-columns: 1fr !important;
+  gap: 10px;
+  width: 100%;
+  min-width: 0;
+  align-content: start;
+}
+.workshop-status-facts .status-fact {
+  min-width: 0;
+  min-height: 0;
+  width: 100%;
+  padding: 14px 16px;
+}
+.workshop-status-facts .status-fact strong {
+  font-size: 20px;
+  line-height: 1.18;
+  white-space: normal;
+  overflow-wrap: break-word;
+  word-break: normal;
+}
+.workshop-status-facts .status-fact small {
+  margin-top: 2px;
+}
+
+/* Keynote introduction appears before the detailed programme */
+.keynote-section {
+  padding: 42px 0 38px;
+}
+.agenda-section {
+  padding-top: 38px;
+}
+
+@media (max-width: 900px) {
+  .workshop-home-panel {
+    grid-template-columns: 1fr;
+  }
+  .workshop-status-facts {
+    grid-template-columns: 1fr !important;
   }
 }
